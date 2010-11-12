@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_icraft_iras_model_Resource" modelAttribute="resource" path="/resources" render="${empty dependencies}" z="UeGwP6Z+V4aP2giDl5znWdgwvSY=">
+        <field:input field="fullName" id="c_com_icraft_iras_model_Resource_fullName" required="true" z="OssjrNwBk3Dfko/9PSJ5z6BUuX4="/>
+        <field:datetime dateTimePattern="${resource_dateofbirth_date_format}" field="dateOfBirth" id="c_com_icraft_iras_model_Resource_dateOfBirth" past="true" required="true" z="Jy30Va0Mp1rfWGYCaE0D8T4hQfs="/>
+        <field:input field="yearsOfExperience" id="c_com_icraft_iras_model_Resource_yearsOfExperience" required="true" validationMessageCode="field_invalid_integer" z="vYuKkqOqqrNfvfT5XS8rb8/XA6E="/>
+    <field:input field="expectedSalary" id="c_com_icraft_iras_model_Resource_expectedSalary" z="swU2CF8ksuWnm8iqY30UyqDM3pI="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_icraft_iras_model_Resource" render="${not empty dependencies}" z="eI3mM/WIwwFsT+p3xXKqaMApCY8="/>
+</div>

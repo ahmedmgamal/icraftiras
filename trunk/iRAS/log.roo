@@ -1,0 +1,37 @@
+// Spring Roo 1.1.0.M3 [rev e66e029] log opened at 2010-11-12 02:06:07
+project --topLevelPackage com.icraft.iras --projectName iRAS
+hint
+persistence setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
+hint
+// [failed] entity --class ~.model.User --testAutomatically
+hint
+// [failed] field string --fieldName fullName --notNull
+hint
+// [failed] entity --class ~.model.User --testAutomatically
+entity --class ~.model.Resource --testAutomatically 
+hint
+field string --fieldName fullName --notNull 
+field date --fieldName dateOfBirth --type java.util.Calendar --notNull --past 
+field number --fieldName yearsOfExperience --type java.lang.Integer --notNull 
+hint
+logging setup --level INFO --package PROJECT 
+controller all --package ~.web
+perform eclipse
+exit
+// Spring Roo 1.1.0.M3 [rev e66e029] log closed at 2010-11-12 03:21:18
+// Spring Roo 1.1.0.M3 [rev e66e029] log opened at 2010-11-12 03:28:49
+persistence setup --provider DATANUCLEUS --database GOOGLE_APP_ENGINE --applicationId icraftras
+exit
+// Spring Roo 1.1.0.M3 [rev e66e029] log closed at 2010-11-12 03:31:56
+// Spring Roo 1.1.0.M3 [rev e66e029] log opened at 2010-11-12 12:53:09
+exit
+// Spring Roo 1.1.0.M3 [rev e66e029] log closed at 2010-11-12 12:53:14
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-12 12:53:33
+perform eclipse
+exit
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-12 14:32:32
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-12 16:10:29
+persistence setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY 
+perform eclipse
+exit
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-12 16:26:31
