@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_icraft_iras_model_JobTitle" object="${jobtitle}" path="/jobtitles" z="LsncBkKlXjEtgx9x1aJwJ5NzvXA=">
+        <field:display field="title" id="s_com_icraft_iras_model_JobTitle_title" object="${jobtitle}" z="h+BxGSlMZCiebUitxehp2DNJmIU="/>
+    <field:display field="averageRate" id="s_com_icraft_iras_model_JobTitle_averageRate" object="${jobtitle}" z="WA61Mx/K/Yuwn+Pqy9BdAOfibDE="/>
+    
+    </page:show>
+</div>
