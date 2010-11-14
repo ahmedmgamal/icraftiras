@@ -35,3 +35,26 @@ persistence setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
 perform eclipse
 exit
 // Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-12 16:26:31
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-12 21:43:51
+entity --class ~.model.JobTitle --testAutomatically
+controller all --package ~.web
+exit
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-13 00:01:27
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-13 00:52:02
+field string --fieldName title --class ~.model.JobTitle --notNull
+exit
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-13 00:52:50
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-13 01:35:13
+persistence setup --provider HIBERNATE --database MYSQL 
+exit
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-13 02:01:16
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-13 02:01:19
+focus --class ~.model.JobTitle
+focus --class ~
+exit
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-13 22:06:57
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-13 22:07:12
+field number --fieldName averageRate --type java.lang.Double --class ~.model.JobTitle --notNull
+hint
+help
+field number --fieldName numberOfDays --type java.lang.Integer
