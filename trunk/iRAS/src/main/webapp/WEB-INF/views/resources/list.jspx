@@ -4,9 +4,12 @@
     <page:list id="pl_com_icraft_iras_model_Resource" items="${resources}" z="pSbQo1nt9XyYyeRdav4Oboa396Q=">
         <table:table data="${resources}" id="l_com_icraft_iras_model_Resource" path="/resources" z="hLKqG9Rink3E7tz4qWF6rzpugIg=">
             <table:column id="c_com_icraft_iras_model_Resource_fullName" property="fullName" z="A7rRNP47MxZiJRufljRjIa6hu70="/>
-            <table:column id="c_com_icraft_iras_model_Resource_dateOfBirth" property="dateOfBirth" z="hlaDbp5Vgih5xZ4FWZKH+g4QaSE="/>
+            
             <table:column id="c_com_icraft_iras_model_Resource_yearsOfExperience" property="yearsOfExperience" z="REM13+Jj1RQraeoul4qu90mBct8="/>
         <table:column id="c_com_icraft_iras_model_Resource_expectedSalary" property="expectedSalary" z="pB1DqQXjvkBpd0kBSI4j7vUu2po="/>
+        
+        <table:column id="c_com_icraft_iras_model_Resource_emailAddress" property="emailAddress" z="y/ErVGtGgHenLosygmvM7TAKRI0="/>
+        
         </table:table>
     </page:list>
 </div>

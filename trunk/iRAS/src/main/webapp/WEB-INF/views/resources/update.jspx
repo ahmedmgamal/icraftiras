@@ -3,8 +3,11 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_com_icraft_iras_model_Resource" modelAttribute="resource" path="/resources" z="bnNcElBX9npRdpBaWDdF6VXlP1I=">
         <field:input field="fullName" id="c_com_icraft_iras_model_Resource_fullName" required="true" z="OssjrNwBk3Dfko/9PSJ5z6BUuX4="/>
-        <field:datetime dateTimePattern="${resource_dateofbirth_date_format}" field="dateOfBirth" id="c_com_icraft_iras_model_Resource_dateOfBirth" past="true" required="true" z="Jy30Va0Mp1rfWGYCaE0D8T4hQfs="/>
-        <field:input field="yearsOfExperience" id="c_com_icraft_iras_model_Resource_yearsOfExperience" required="true" validationMessageCode="field_invalid_integer" z="vYuKkqOqqrNfvfT5XS8rb8/XA6E="/>
+        
+        <field:input field="yearsOfExperience" id="c_com_icraft_iras_model_Resource_yearsOfExperience" validationMessageCode="field_invalid_integer" z="uh8OC6B4cPXvLRQCS7gJfAzj/zQ="/>
     <field:input field="expectedSalary" id="c_com_icraft_iras_model_Resource_expectedSalary" z="swU2CF8ksuWnm8iqY30UyqDM3pI="/>
+    
+    <field:input field="emailAddress" id="c_com_icraft_iras_model_Resource_emailAddress" validationMessageCode="field_invalid_email" z="TqUuez7H91xBtlDJA5YTUKtTk3Q="/>
+    
     </form:update>
 </div>
