@@ -3,8 +3,11 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_com_icraft_iras_model_Resource" object="${resource}" path="/resources" z="5G0x0jp8ANOxjKhggLeluv2vmDE=">
         <field:display field="fullName" id="s_com_icraft_iras_model_Resource_fullName" object="${resource}" z="X9RvwFXgDSZ3VNl0iOEC/VZsr80="/>
-        <field:display calendar="true" dateTimePattern="${resource_dateofbirth_date_format}" field="dateOfBirth" id="s_com_icraft_iras_model_Resource_dateOfBirth" object="${resource}" z="7tFA8mZ6IEzbb6DxlI+j5Jkbvuc="/>
+        
         <field:display field="yearsOfExperience" id="s_com_icraft_iras_model_Resource_yearsOfExperience" object="${resource}" z="vD6fOPnz5s+drVQKMzf7JvLOqus="/>
     <field:display field="expectedSalary" id="s_com_icraft_iras_model_Resource_expectedSalary" object="${resource}" z="5RBWvTrm6PHzcKka6tBENSZT4fo="/>
+    
+    <field:display field="emailAddress" id="s_com_icraft_iras_model_Resource_emailAddress" object="${resource}" z="ETf/O7MB2Ni4Fs+XQsiI2GA16mQ="/>
+    
     </page:show>
 </div>
