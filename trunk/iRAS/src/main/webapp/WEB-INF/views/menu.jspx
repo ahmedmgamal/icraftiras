@@ -10,6 +10,8 @@
         <menu:category id="c_resource" z="QccBeAQCWbFlycIXkFVzmR8srU0=">
             <menu:item id="i_resource_new" messageCode="global_menu_new" url="/resources?form" z="F3oI3tJDA/wuL+veUMAjUDRDeog="/>
         <menu:item id="i_resource_list" messageCode="global_menu_list" url="/resources?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="IOgqVgF7JeU3RHC6QMbYc4a8r/w="/>
+        <menu:item id="fi_resource_emailaddress" messageCode="global_menu_find" url="/resources?find=ByEmailAddress&amp;form" z="IzXGV8ezvO2Ekfsclw60qbcgnz8="/>
+        <menu:item id="fi_resource_skills" messageCode="global_menu_find" url="/resources?find=BySkills&amp;form" z="zWW8zYGy5BCLHze1qplLlNlDN2M="/>
         </menu:category>
     <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
             <menu:item id="i_controller__batchuseruploadindex_id" messageCode="global_generic" url="/batchuserupload/index" z="oIY38tK5Vse0wEcCIpN7B2H4jxE="/>
@@ -17,6 +19,10 @@
     <menu:category id="c_jobtitle" z="oxiWDJkVpIBbJUJgpiCoIUk+OEU=">
         <menu:item id="i_jobtitle_new" messageCode="global_menu_new" url="/jobtitles?form" z="ljbt3VrhcIIC0FCN3OgMiJvsuYg="/>
         <menu:item id="i_jobtitle_list" messageCode="global_menu_list" url="/jobtitles?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="DEMb9eHCfptTKpoTHb20DLnyOI0="/>
+        </menu:category>
+    <menu:category id="c_skill" z="Iaylqb/Nl/Uig1wNeJAoQWYI/lI=">
+            <menu:item id="i_skill_new" messageCode="global_menu_new" url="/skills?form" z="66VeXO5EeHIFheC8BPoFzxZLQZU="/>
+        <menu:item id="i_skill_list" messageCode="global_menu_list" url="/skills?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="heF899wB1GRhFbZUFxsnyA1qSSE="/>
         </menu:category>
     </menu:menu>
 </div>
