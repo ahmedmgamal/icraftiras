@@ -18,7 +18,7 @@ privileged aspect ResourceDataOnDemand_Roo_DataOnDemand {
     
     public Resource ResourceDataOnDemand.getNewTransientResource(int index) {
         com.icraft.iras.model.Resource obj = new com.icraft.iras.model.Resource();
-        obj.setDateOfBirth(new java.util.GregorianCalendar(java.util.Calendar.getInstance().get(java.util.Calendar.YEAR), java.util.Calendar.getInstance().get(java.util.Calendar.MONTH), java.util.Calendar.getInstance().get(java.util.Calendar.DAY_OF_MONTH) - 1));
+        obj.setEmailAddress("emailAddress_" + index);
         obj.setExpectedSalary(new Integer(index).doubleValue());
         obj.setFullName("fullName_" + index);
         obj.setYearsOfExperience(new Integer(index));
