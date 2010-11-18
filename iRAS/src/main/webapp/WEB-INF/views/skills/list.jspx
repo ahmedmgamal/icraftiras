@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_icraft_iras_model_Skill" items="${skills}" z="QkUe/M/FmNO1V6LbF8H4JjbV6ik=">
+        <table:table data="${skills}" id="l_com_icraft_iras_model_Skill" path="/skills" z="VjB6uIbFvxljjOqfAP+stTM/baU=">
+            
+        <table:column id="c_com_icraft_iras_model_Skill_name" property="name" z="NdqUMij9DUL1QZ5Zz/10D2KS13A="/>
+        </table:table>
+    </page:list>
+</div>
