@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+  <jsp:output omit-xml-declaration="yes"/>
+  <spring:message code="label_batchuserupload_index" var="title"/>
+  <util:panel id="title" title="${title}">
+    <spring:message code="application_name" var="app_name"/>
+   
+      <spring:message arguments="${app_name}" code="welcome_titlepane"/>
+   
+    <form method="post" action="batchuserupload/submitFile" enctype="multipart/form-data">
+            <input type="file" name="file"/>
+            <input type="submit" value="upload"/>
+        </form>
+   
+     </util:panel>
+  
+  
+</div>
