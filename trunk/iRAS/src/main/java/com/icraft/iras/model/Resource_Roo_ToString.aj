@@ -12,9 +12,9 @@ privileged aspect Resource_Roo_ToString {
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("Version: ").append(getVersion()).append(", ");
         sb.append("FullName: ").append(getFullName()).append(", ");
-        sb.append("DateOfBirth: ").append(getDateOfBirth() == null ? "null" : getDateOfBirth().getTime()).append(", ");
         sb.append("YearsOfExperience: ").append(getYearsOfExperience()).append(", ");
-        sb.append("ExpectedSalary: ").append(getExpectedSalary());
+        sb.append("ExpectedSalary: ").append(getExpectedSalary()).append(", ");
+        sb.append("EmailAddress: ").append(getEmailAddress());
         return sb.toString();
     }
     

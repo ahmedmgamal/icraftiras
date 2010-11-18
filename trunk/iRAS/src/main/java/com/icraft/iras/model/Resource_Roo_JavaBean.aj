@@ -5,7 +5,6 @@ package com.icraft.iras.model;
 
 import java.lang.Integer;
 import java.lang.String;
-import java.util.Calendar;
 
 privileged aspect Resource_Roo_JavaBean {
     
@@ -15,14 +14,6 @@ privileged aspect Resource_Roo_JavaBean {
     
     public void Resource.setFullName(String fullName) {
         this.fullName = fullName;
-    }
-    
-    public Calendar Resource.getDateOfBirth() {
-        return this.dateOfBirth;
-    }
-    
-    public void Resource.setDateOfBirth(Calendar dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
     }
     
     public Integer Resource.getYearsOfExperience() {
@@ -39,6 +30,14 @@ privileged aspect Resource_Roo_JavaBean {
     
     public void Resource.setExpectedSalary(double expectedSalary) {
         this.expectedSalary = expectedSalary;
+    }
+    
+    public String Resource.getEmailAddress() {
+        return this.emailAddress;
+    }
+    
+    public void Resource.setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
     
 }
