@@ -4,9 +4,12 @@
 package com.icraft.iras.web;
 
 import com.icraft.iras.model.Resource;
+import com.icraft.iras.model.Skill;
 import java.io.UnsupportedEncodingException;
 import java.lang.Long;
 import java.lang.String;
+import java.util.Collection;
+import java.util.Set;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -15,6 +18,7 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.support.GenericConversionService;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -87,6 +91,34 @@ privileged aspect ResourceController_Roo_Controller {
         return "redirect:/resources?page=" + ((page == null) ? "1" : page.toString()) + "&size=" + ((size == null) ? "10" : size.toString());
     }
     
+    @RequestMapping(params = { "find=ByEmailAddress", "form" }, method = RequestMethod.GET)
+    public String ResourceController.findResourcesByEmailAddressForm(Model model) {
+        return "resources/findResourcesByEmailAddress";
+    }
+    
+    @RequestMapping(params = "find=ByEmailAddress", method = RequestMethod.GET)
+    public String ResourceController.findResourcesByEmailAddress(@RequestParam("emailAddress") String emailAddress, Model model) {
+        model.addAttribute("resources", Resource.findResourcesByEmailAddress(emailAddress).getResultList());
+        return "resources/list";
+    }
+    
+    @RequestMapping(params = { "find=BySkills", "form" }, method = RequestMethod.GET)
+    public String ResourceController.findResourcesBySkillsForm(Model model) {
+        model.addAttribute("skills", Skill.findAllSkills());
+        return "resources/findResourcesBySkills";
+    }
+    
+    @RequestMapping(params = "find=BySkills", method = RequestMethod.GET)
+    public String ResourceController.findResourcesBySkills(@RequestParam("skills") Set<Skill> skills, Model model) {
+        model.addAttribute("resources", Resource.findResourcesBySkills(skills).getResultList());
+        return "resources/list";
+    }
+    
+    @ModelAttribute("skills")
+    public Collection<Skill> ResourceController.populateSkills() {
+        return Skill.findAllSkills();
+    }
+    
     Converter<Resource, String> ResourceController.getResourceConverter() {
         return new Converter<Resource, String>() {
             public String convert(Resource resource) {
@@ -95,9 +127,18 @@ privileged aspect ResourceController_Roo_Controller {
         };
     }
     
+    Converter<Skill, String> ResourceController.getSkillConverter() {
+        return new Converter<Skill, String>() {
+            public String convert(Skill skill) {
+                return new StringBuilder().append(skill.getName()).toString();
+            }
+        };
+    }
+    
     @PostConstruct
     void ResourceController.registerConverters() {
         conversionService.addConverter(getResourceConverter());
+        conversionService.addConverter(getSkillConverter());
     }
     
     private String ResourceController.encodeUrlPathSegment(String pathSegment, HttpServletRequest request) {
