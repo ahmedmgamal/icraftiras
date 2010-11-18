@@ -10,9 +10,7 @@ import java.lang.String;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.joda.time.format.DateTimeFormat;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.support.GenericConversionService;
 import org.springframework.ui.Model;
@@ -33,7 +31,6 @@ privileged aspect ResourceController_Roo_Controller {
     public String ResourceController.create(@Valid Resource resource, BindingResult result, Model model, HttpServletRequest request) {
         if (result.hasErrors()) {
             model.addAttribute("resource", resource);
-            addDateTimeFormatPatterns(model);
             return "resources/create";
         }
         resource.persist();
@@ -43,13 +40,11 @@ privileged aspect ResourceController_Roo_Controller {
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String ResourceController.createForm(Model model) {
         model.addAttribute("resource", new Resource());
-        addDateTimeFormatPatterns(model);
         return "resources/create";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String ResourceController.show(@PathVariable("id") Long id, Model model) {
-        addDateTimeFormatPatterns(model);
         model.addAttribute("resource", Resource.findResource(id));
         model.addAttribute("itemId", id);
         return "resources/show";
@@ -65,7 +60,6 @@ privileged aspect ResourceController_Roo_Controller {
         } else {
             model.addAttribute("resources", Resource.findAllResources());
         }
-        addDateTimeFormatPatterns(model);
         return "resources/list";
     }
     
@@ -73,7 +67,6 @@ privileged aspect ResourceController_Roo_Controller {
     public String ResourceController.update(@Valid Resource resource, BindingResult result, Model model, HttpServletRequest request) {
         if (result.hasErrors()) {
             model.addAttribute("resource", resource);
-            addDateTimeFormatPatterns(model);
             return "resources/update";
         }
         resource.merge();
@@ -83,7 +76,6 @@ privileged aspect ResourceController_Roo_Controller {
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
     public String ResourceController.updateForm(@PathVariable("id") Long id, Model model) {
         model.addAttribute("resource", Resource.findResource(id));
-        addDateTimeFormatPatterns(model);
         return "resources/update";
     }
     
@@ -98,7 +90,7 @@ privileged aspect ResourceController_Roo_Controller {
     Converter<Resource, String> ResourceController.getResourceConverter() {
         return new Converter<Resource, String>() {
             public String convert(Resource resource) {
-                return new StringBuilder().append(resource.getFullName()).append(" ").append(resource.getDateOfBirth()).append(" ").append(resource.getYearsOfExperience()).toString();
+                return new StringBuilder().append(resource.getFullName()).append(" ").append(resource.getYearsOfExperience()).append(" ").append(resource.getExpectedSalary()).toString();
             }
         };
     }
@@ -106,10 +98,6 @@ privileged aspect ResourceController_Roo_Controller {
     @PostConstruct
     void ResourceController.registerConverters() {
         conversionService.addConverter(getResourceConverter());
-    }
-    
-    void ResourceController.addDateTimeFormatPatterns(Model model) {
-        model.addAttribute("resource_dateofbirth_date_format", DateTimeFormat.patternForStyle("S-", LocaleContextHolder.getLocale()));
     }
     
     private String ResourceController.encodeUrlPathSegment(String pathSegment, HttpServletRequest request) {
