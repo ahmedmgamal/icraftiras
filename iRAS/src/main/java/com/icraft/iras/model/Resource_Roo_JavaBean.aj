@@ -3,8 +3,10 @@
 
 package com.icraft.iras.model;
 
+import com.icraft.iras.model.Skill;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Set;
 
 privileged aspect Resource_Roo_JavaBean {
     
@@ -38,6 +40,14 @@ privileged aspect Resource_Roo_JavaBean {
     
     public void Resource.setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
+    }
+    
+    public Set<Skill> Resource.getSkills() {
+        return this.skills;
+    }
+    
+    public void Resource.setSkills(Set<Skill> skills) {
+        this.skills = skills;
     }
     
 }
