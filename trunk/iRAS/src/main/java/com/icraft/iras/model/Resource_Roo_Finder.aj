@@ -4,9 +4,7 @@
 package com.icraft.iras.model;
 
 import com.icraft.iras.model.Resource;
-import com.icraft.iras.model.Skill;
 import java.lang.String;
-import java.util.Set;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
@@ -17,22 +15,6 @@ privileged aspect Resource_Roo_Finder {
         EntityManager em = Resource.entityManager();
         TypedQuery<Resource> q = em.createQuery("SELECT Resource FROM Resource AS resource WHERE resource.emailAddress = :emailAddress", Resource.class);
         q.setParameter("emailAddress", emailAddress);
-        return q;
-    }
-    
-    public static TypedQuery<Resource> Resource.findResourcesBySkills(Set<Skill> skills) {
-        if (skills == null) throw new IllegalArgumentException("The skills argument is required");
-        EntityManager em = Resource.entityManager();
-        StringBuilder queryBuilder = new StringBuilder("SELECT Resource FROM Resource AS resource WHERE");
-        for (int i = 0; i < skills.size(); i++) {
-            if (i > 0) queryBuilder.append(" AND");
-            queryBuilder.append(" :skills_item").append(i).append(" MEMBER OF resource.skills");
-        }
-        TypedQuery<Resource> q = em.createQuery(queryBuilder.toString(), Resource.class);
-        int skillsIndex = 0;
-        for (Skill _skill: skills) {
-            q.setParameter("skills_item" + skillsIndex++, _skill);
-        }
         return q;
     }
     
