@@ -13,4 +13,10 @@
 <definition extends="default" name="resources/update">
         <put-attribute name="body" value="/WEB-INF/views/resources/update.jspx"/>
     </definition>
+<definition extends="default" name="resources/findResourcesByEmailAddress">
+        <put-attribute name="body" value="/WEB-INF/views/resources/findResourcesByEmailAddress.jspx"/>
+    </definition>
+<definition extends="default" name="resources/findResourcesBySkills">
+        <put-attribute name="body" value="/WEB-INF/views/resources/findResourcesBySkills.jspx"/>
+    </definition>
 </tiles-definitions>

@@ -9,5 +9,6 @@
     
     <field:display field="emailAddress" id="s_com_icraft_iras_model_Resource_emailAddress" object="${resource}" z="ETf/O7MB2Ni4Fs+XQsiI2GA16mQ="/>
     
+    <field:display field="skills" id="s_com_icraft_iras_model_Resource_skills" object="${resource}" z="95OX5O7faPGUAUPUMLWvJ722pZw="/>
     </page:show>
 </div>
