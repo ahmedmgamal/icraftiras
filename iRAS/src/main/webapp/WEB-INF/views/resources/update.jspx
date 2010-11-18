@@ -9,5 +9,6 @@
     
     <field:input field="emailAddress" id="c_com_icraft_iras_model_Resource_emailAddress" validationMessageCode="field_invalid_email" z="TqUuez7H91xBtlDJA5YTUKtTk3Q="/>
     
+    <field:select field="skills" id="c_com_icraft_iras_model_Resource_skills" itemValue="id" items="${skills}" multiple="true" path="/skills" z="gM4RTIug2YhH1Qw0YBCKD+PCfZ0="/>
     </form:update>
 </div>
