@@ -15,7 +15,7 @@ privileged aspect Resource_Roo_ToString {
         sb.append("YearsOfExperience: ").append(getYearsOfExperience()).append(", ");
         sb.append("ExpectedSalary: ").append(getExpectedSalary()).append(", ");
         sb.append("EmailAddress: ").append(getEmailAddress()).append(", ");
-        sb.append("Skills: ").append(getSkills() == null ? "null" : getSkills().size());
+        sb.append("ResourceSkillLevels: ").append(getResourceSkillLevels() == null ? "null" : getResourceSkillLevels().size());
         return sb.toString();
     }
     

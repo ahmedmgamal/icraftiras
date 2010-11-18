@@ -8,6 +8,7 @@ import org.springframework.roo.addon.entity.RooEntity;
 import javax.validation.constraints.NotNull;
 import java.util.Calendar;
 import javax.validation.constraints.Past;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -22,7 +23,8 @@ import javax.persistence.CascadeType;
 @Entity
 @RooJavaBean
 @RooToString
-@RooEntity(finders = { "findResourcesByEmailAddress", "findResourcesBySkills" })
+@RooEntity(finders = { "findResourcesByEmailAddress" })
+
 public class Resource {
 
     @NotNull
@@ -34,6 +36,6 @@ public class Resource {
 
     private String emailAddress;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Skill> skills = new HashSet<Skill>();
+    @OneToMany(cascade=CascadeType.ALL )
+    private Set<ResourceSkillLevel> resourceSkillLevels ;
 }

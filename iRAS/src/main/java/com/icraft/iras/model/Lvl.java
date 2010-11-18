@@ -6,8 +6,8 @@ import org.springframework.roo.addon.entity.RooEntity;
 
 @RooJavaBean
 @RooToString
-@RooEntity(finders = { "findSkillsByName" })
-public class Skill {
+@RooEntity(finders = { "findLvlsByName" })
+public class Lvl {
 
     private String name;
 }
