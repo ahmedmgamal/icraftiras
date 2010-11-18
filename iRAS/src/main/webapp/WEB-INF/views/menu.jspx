@@ -11,6 +11,9 @@
             <menu:item id="i_resource_new" messageCode="global_menu_new" url="/resources?form" z="F3oI3tJDA/wuL+veUMAjUDRDeog="/>
         <menu:item id="i_resource_list" messageCode="global_menu_list" url="/resources?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="IOgqVgF7JeU3RHC6QMbYc4a8r/w="/>
         </menu:category>
+    <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
+            <menu:item id="i_controller__batchuseruploadindex_id" messageCode="global_generic" url="/batchuserupload/index" z="oIY38tK5Vse0wEcCIpN7B2H4jxE="/>
+        </menu:category>
     <menu:category id="c_jobtitle" z="oxiWDJkVpIBbJUJgpiCoIUk+OEU=">
         <menu:item id="i_jobtitle_new" messageCode="global_menu_new" url="/jobtitles?form" z="ljbt3VrhcIIC0FCN3OgMiJvsuYg="/>
         <menu:item id="i_jobtitle_list" messageCode="global_menu_list" url="/jobtitles?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="DEMb9eHCfptTKpoTHb20DLnyOI0="/>
