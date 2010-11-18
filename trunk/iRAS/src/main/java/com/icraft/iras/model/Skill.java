@@ -8,4 +8,6 @@ import org.springframework.roo.addon.entity.RooEntity;
 @RooToString
 @RooEntity
 public class Skill {
+
+    private String name;
 }

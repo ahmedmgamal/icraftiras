@@ -14,7 +14,8 @@ privileged aspect Resource_Roo_ToString {
         sb.append("FullName: ").append(getFullName()).append(", ");
         sb.append("YearsOfExperience: ").append(getYearsOfExperience()).append(", ");
         sb.append("ExpectedSalary: ").append(getExpectedSalary()).append(", ");
-        sb.append("EmailAddress: ").append(getEmailAddress());
+        sb.append("EmailAddress: ").append(getEmailAddress()).append(", ");
+        sb.append("Skills: ").append(getSkills() == null ? "null" : getSkills().size());
         return sb.toString();
     }
     
