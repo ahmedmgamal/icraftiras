@@ -5,6 +5,13 @@
         <table:table data="${skills}" id="l_com_icraft_iras_model_Skill" path="/skills" z="VjB6uIbFvxljjOqfAP+stTM/baU=">
             
         <table:column id="c_com_icraft_iras_model_Skill_name" property="name" z="NdqUMij9DUL1QZ5Zz/10D2KS13A="/>
+        
+        
+        
+        
+        
+        
+        
         </table:table>
     </page:list>
 </div>

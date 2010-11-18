@@ -4,12 +4,11 @@
 package com.icraft.iras.web;
 
 import com.icraft.iras.model.Resource;
-import com.icraft.iras.model.Skill;
+import com.icraft.iras.model.ResourceSkillLevel;
 import java.io.UnsupportedEncodingException;
 import java.lang.Long;
 import java.lang.String;
 import java.util.Collection;
-import java.util.Set;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -102,21 +101,9 @@ privileged aspect ResourceController_Roo_Controller {
         return "resources/list";
     }
     
-    @RequestMapping(params = { "find=BySkills", "form" }, method = RequestMethod.GET)
-    public String ResourceController.findResourcesBySkillsForm(Model model) {
-        model.addAttribute("skills", Skill.findAllSkills());
-        return "resources/findResourcesBySkills";
-    }
-    
-    @RequestMapping(params = "find=BySkills", method = RequestMethod.GET)
-    public String ResourceController.findResourcesBySkills(@RequestParam("skills") Set<Skill> skills, Model model) {
-        model.addAttribute("resources", Resource.findResourcesBySkills(skills).getResultList());
-        return "resources/list";
-    }
-    
-    @ModelAttribute("skills")
-    public Collection<Skill> ResourceController.populateSkills() {
-        return Skill.findAllSkills();
+    @ModelAttribute("resourceskilllevels")
+    public Collection<ResourceSkillLevel> ResourceController.populateResourceSkillLevels() {
+        return ResourceSkillLevel.findAllResourceSkillLevels();
     }
     
     Converter<Resource, String> ResourceController.getResourceConverter() {
@@ -127,18 +114,9 @@ privileged aspect ResourceController_Roo_Controller {
         };
     }
     
-    Converter<Skill, String> ResourceController.getSkillConverter() {
-        return new Converter<Skill, String>() {
-            public String convert(Skill skill) {
-                return new StringBuilder().append(skill.getName()).toString();
-            }
-        };
-    }
-    
     @PostConstruct
     void ResourceController.registerConverters() {
         conversionService.addConverter(getResourceConverter());
-        conversionService.addConverter(getSkillConverter());
     }
     
     private String ResourceController.encodeUrlPathSegment(String pathSegment, HttpServletRequest request) {

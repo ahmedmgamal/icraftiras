@@ -142,3 +142,59 @@ field number --fieldName averageRate --type java.lang.Double --class ~.model.Job
 hint
 help
 field number --fieldName numberOfDays --type java.lang.Integer
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-18 03:32:24
+hint
+exit
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-18 03:39:02
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-18 03:39:17
+// [failed] ent --class ~.model.skill
+field string skillName
+controller scaffold --class ~.model.Skill 
+controller scaffold --class ~.web.skillController 
+// [failed] ent --class ~.model.Skill 
+ent --class ~.model.Skill
+field string --fieldName name 
+// [failed] ent --class ~.model.Resource
+// [failed] field set --fieldName skills --element ~.model.Skill
+field set --fieldName skills --element ~.model.Skill
+finder list 
+finder add --finderName findResourcesByEmailAddress
+finder add --finderName findResourcesBySkills
+ent --class ~.model.Category
+field string --fieldName name
+// [failed] ent --class ~.model.Skill
+field reference --fieldName category --type ~.model.Category
+// [failed] ent --class ~.model.Category
+controller scaffold --class ~.web.CategoryController
+finder list --depth 3 
+finder list --depth 10 
+// [failed] finder list
+finder list
+finder list --depth 4
+// [failed] finder list --filter 
+finder list --filter 
+finder list 
+// [failed] gwt setup
+// [failed] controller scaffold --class ~.model.CategoryController --entity ~.model.Category
+controller scaffold --class ~.model.CategoryController --entity ~.model.Category
+// [failed] controller scaffold --class ~.web.CategoryController --entity ~.model.Category
+// [failed] controller scaffold --class ~.web.CategoryController --entity ~.model.Category
+controller scaffold --class ~.web.CategoryController --entity ~.model.Category
+ent --class ~.model.ResourceSkillLevel
+field reference --fieldName resource --type ~.model.Resource
+field reference --fieldName skill --type ~.model.Skill
+// [failed] ent --class ~.model.Level
+ent --class ~.model.Lvl
+field string --fieldName name
+controller scaffold --class ~.web.LvlController --entity ~.model.Lvl
+// [failed] ent --class ~.model.ResourceSkillLevel
+field reference --fieldName lvl --type ~.model.Lvl
+// [failed] ent --class ~.model.Lvl
+finder list
+finder add --finderName findLvlsByName
+// [failed] ent --class ~.model.Skill
+finder list
+finder add --finderName findSkillsByName
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-18 08:09:40
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-18 08:09:50
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-18 09:44:00

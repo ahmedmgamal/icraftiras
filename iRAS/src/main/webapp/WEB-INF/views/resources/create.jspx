@@ -9,7 +9,8 @@
     
     <field:input field="emailAddress" id="c_com_icraft_iras_model_Resource_emailAddress" validationMessageCode="field_invalid_email" z="TqUuez7H91xBtlDJA5YTUKtTk3Q="/>
     
-    <field:select field="skills" id="c_com_icraft_iras_model_Resource_skills" itemValue="id" items="${skills}" multiple="true" path="/skills" z="gM4RTIug2YhH1Qw0YBCKD+PCfZ0="/>
+    
+    <field:simple field="resourceSkillLevels" id="c_com_icraft_iras_model_Resource_resourceSkillLevels" messageCode="entity_reference_not_managed" messageCodeAttribute="Resource Skill Level" z="NvG6PhRrzS11JxcfGOpz5EFQT58="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_icraft_iras_model_Resource" render="${not empty dependencies}" z="eI3mM/WIwwFsT+p3xXKqaMApCY8="/>
 </div>
