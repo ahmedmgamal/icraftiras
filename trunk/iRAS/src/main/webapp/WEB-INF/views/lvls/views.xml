@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="lvls/list">
+        <put-attribute name="body" value="/WEB-INF/views/lvls/list.jspx"/>
+    </definition>
+<definition extends="default" name="lvls/show">
+        <put-attribute name="body" value="/WEB-INF/views/lvls/show.jspx"/>
+    </definition>
+<definition extends="default" name="lvls/create">
+        <put-attribute name="body" value="/WEB-INF/views/lvls/create.jspx"/>
+    </definition>
+<definition extends="default" name="lvls/update">
+        <put-attribute name="body" value="/WEB-INF/views/lvls/update.jspx"/>
+    </definition>
+<definition extends="default" name="lvls/findLvlsByName">
+        <put-attribute name="body" value="/WEB-INF/views/lvls/findLvlsByName.jspx"/>
+    </definition>
+</tiles-definitions>

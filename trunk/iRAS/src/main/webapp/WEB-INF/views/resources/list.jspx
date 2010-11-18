@@ -10,7 +10,7 @@
         
         <table:column id="c_com_icraft_iras_model_Resource_emailAddress" property="emailAddress" z="y/ErVGtGgHenLosygmvM7TAKRI0="/>
         
-        <table:column id="c_com_icraft_iras_model_Resource_skills" property="skills" z="9wt+vNY5BTYDP/l1lDOJe5VB/Sw="/>
+        <table:column id="c_com_icraft_iras_model_Resource_resourceSkillLevels" property="resourceSkillLevels" z="MqeLeuKiKe2FhwezC4o0rgSA9mE="/>
         </table:table>
     </page:list>
 </div>

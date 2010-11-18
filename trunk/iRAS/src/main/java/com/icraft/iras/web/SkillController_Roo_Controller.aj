@@ -87,6 +87,17 @@ privileged aspect SkillController_Roo_Controller {
         return "redirect:/skills?page=" + ((page == null) ? "1" : page.toString()) + "&size=" + ((size == null) ? "10" : size.toString());
     }
     
+    @RequestMapping(params = { "find=ByName", "form" }, method = RequestMethod.GET)
+    public String SkillController.findSkillsByNameForm(Model model) {
+        return "skills/findSkillsByName";
+    }
+    
+    @RequestMapping(params = "find=ByName", method = RequestMethod.GET)
+    public String SkillController.findSkillsByName(@RequestParam("name") String name, Model model) {
+        model.addAttribute("skills", Skill.findSkillsByName(name).getResultList());
+        return "skills/list";
+    }
+    
     Converter<Skill, String> SkillController.getSkillConverter() {
         return new Converter<Skill, String>() {
             public String convert(Skill skill) {

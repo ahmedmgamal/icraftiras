@@ -13,4 +13,7 @@
 <definition extends="default" name="skills/update">
         <put-attribute name="body" value="/WEB-INF/views/skills/update.jspx"/>
     </definition>
+<definition extends="default" name="skills/findSkillsByName">
+        <put-attribute name="body" value="/WEB-INF/views/skills/findSkillsByName.jspx"/>
+    </definition>
 </tiles-definitions>

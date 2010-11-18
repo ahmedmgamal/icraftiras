@@ -4,5 +4,12 @@
     <page:show id="ps_com_icraft_iras_model_Skill" object="${skill}" path="/skills" z="u6yROCnkAEBqSkxLem9YyGlltbM=">
         
     <field:display field="name" id="s_com_icraft_iras_model_Skill_name" object="${skill}" z="rssKGNPXDJcjQqCG+wQlRJxuijg="/>
+    
+    
+    
+    
+    
+    
+    
     </page:show>
 </div>

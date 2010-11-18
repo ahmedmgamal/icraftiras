@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_icraft_iras_model_Lvl" object="${lvl}" path="/lvls" z="BK6l74ycG946roEbKiCK1pWXS/Q=">
+        <field:display field="name" id="s_com_icraft_iras_model_Lvl_name" object="${lvl}" z="ePOo31Lq/eqBnc69TeOz5oKRQ80="/>
+    </page:show>
+</div>

@@ -4,6 +4,13 @@
     <form:create id="fc_com_icraft_iras_model_Skill" modelAttribute="skill" path="/skills" render="${empty dependencies}" z="Z2859jKsaiQr1PWeitW3f+YLg9I=">
         
     <field:input field="name" id="c_com_icraft_iras_model_Skill_name" z="k+xJYZ0hv2qYwfiTviLz7MlsxrM="/>
+    
+    
+    
+    
+    
+    
+    
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_icraft_iras_model_Skill" render="${not empty dependencies}" z="/OGOESjtUqVoYDosj+XwMeC/8M0="/>
 </div>

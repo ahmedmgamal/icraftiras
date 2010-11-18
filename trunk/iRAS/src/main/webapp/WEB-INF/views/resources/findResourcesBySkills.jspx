@@ -2,6 +2,6 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:output omit-xml-declaration="yes"/>
     <form:find finderName="BySkills" id="ff_com_icraft_iras_model_Resource" path="/resources" z="1msVX9ONTvV3aRca3qSGDc7SLrI=">
-        <field:select disableFormBinding="true" field="skills" id="f_com_icraft_iras_model_Resource_skills" itemValue="id" items="${skills}" multiple="true" path="/skills" z="lVgj7Ow51CGEWdK8OM5tglsYkqk="/>
+        <field:select disableFormBinding="true" field="skills" id="f_com_icraft_iras_model_Resource_skills" itemValue="id" items="${resourceskilllevels}" multiple="true" path="/resourceskilllevels" z="P7PkE5U1teBm8N8J5XciRRk7oNk="/>
     </form:find>
 </div>

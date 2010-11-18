@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_com_icraft_iras_model_Skill" modelAttribute="skill" path="/skills" z="8e7fdnBvwVh3vD9I+/HEDwE24aQ=">
-        
-    <field:input field="name" id="c_com_icraft_iras_model_Skill_name" z="k+xJYZ0hv2qYwfiTviLz7MlsxrM="/>
-    
-    
-    
-    
-    
-    
-    
+    <form:update id="fu_com_icraft_iras_model_Lvl" modelAttribute="lvl" path="/lvls" z="t920uMcm8lyU8tY8hKpdJ8wiSZg=">
+        <field:input field="name" id="c_com_icraft_iras_model_Lvl_name" z="pwN6tMgumvctAGObsf9PoIWRrhM="/>
     </form:update>
 </div>
