@@ -35,6 +35,90 @@ persistence setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
 perform eclipse
 exit
 // Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-12 16:26:31
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-13 17:34:45
+hint
+hint finders
+// [failed] finder list --class 
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-14 12:28:13
+hint
+hint
+hint entity
+hint entities
+ent --class com.icraft.iras.model.ResourceSkills
+hint
+hint fields
+hint finders
+finder list
+hint fields
+field number --fieldName resourceId --type java.lang.Integer
+field string --fieldName Skill 
+hint field
+hint fields
+hint
+field number --fieldName skillLevel --type java.lang.Integer 
+hint
+hint fields
+hint relationships
+// [failed] ent --class Resource
+hint relationships
+field set --fieldName skills --element ResourceSkills  
+hint entities
+// [failed] ent --class ResourceSkills
+hint fields
+hint
+help
+hint
+hint topics
+hint
+ent --class ResourceSkill
+ent --class Resorce
+// [failed] ent --class ResourceSkill
+hint contraollers
+hint controllers
+controller class ~.web.ResourceSkillController 
+controller scaffold --class ResourceskillController 
+// [failed] controller scaffold --class ResourceskillController --entity ResourceSkill
+// [failed] controller scaffold --class ResourceskillController --entity ResourceSkill
+// [failed] controller scaffold --class ResourceskillController --entity ResourceSkill
+// [failed] controller scaffold --class ResourceskillController --entity ResourceSkill
+// [failed] field reference --fieldName resourceId --type java.lang,Integer
+field reference --fieldName resourceId --type Resource
+field string --fieldName skill
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-14 18:04:25
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-15 03:13:56
+hint
+hint controllers
+controller class ~.web.CsvController --entity ~.web.Csv
+hint
+hint controllers
+// [failed] controller class ~.web.CsvController --entity ~.web.Csv
+// [failed] controller scaffold ~.web.CsvController --entity ~.web.Csv
+controller scaffold ~.web.CsvController --entity ~.web.Csv
+controller scaffold ~.web.CsvController --entity ~.web.Csv
+hint controller 
+hint controller scaffold 
+// [failed] controller scaffold ~.web.CsvController --entity ~.web.Csv
+controller all --package ~.weball
+hint
+hint perform
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-15 12:58:19
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-16 04:01:34
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-16 04:02:11
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-16 04:02:29
+// [failed] hint
+hint 
+hint
+hint controllers
+controller class ~.web.UploadUsersSave 
+controller class ~.web.SaveUsersController
+controller class ~.web.BatchUserUpload
+ent --class ~.model.Skill
+// [failed] ent --class Resource
+hint fields
+// [failed] field email template --fieldName email 
+field email template --fieldName email 
+field string --fieldName emailAddress 
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-16 08:55:49
 // Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-12 21:43:51
 entity --class ~.model.JobTitle --testAutomatically
 controller all --package ~.web
