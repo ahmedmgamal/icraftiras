@@ -18,6 +18,7 @@ privileged aspect ResourceDataOnDemand_Roo_DataOnDemand {
     
     public Resource ResourceDataOnDemand.getNewTransientResource(int index) {
         com.icraft.iras.model.Resource obj = new com.icraft.iras.model.Resource();
+        obj.setCvText(null);
         obj.setEmailAddress("emailAddress_" + index);
         obj.setExpectedSalary(new Integer(index).doubleValue());
         obj.setFullName("fullName_" + index);
