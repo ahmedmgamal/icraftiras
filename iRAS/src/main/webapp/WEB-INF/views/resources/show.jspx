@@ -11,5 +11,6 @@
     
     
     <field:display field="resourceSkillLevels" id="s_com_icraft_iras_model_Resource_resourceSkillLevels" object="${resource}" z="1stIVmsP5GbVoW5lOFPzv+U+gbA="/>
+    <field:display field="cvText" id="s_com_icraft_iras_model_Resource_cvText" object="${resource}" z="OSf302DZyG+n/ez5PqLkNEXxHCU="/>
     </page:show>
 </div>

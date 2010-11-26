@@ -11,6 +11,7 @@
         <table:column id="c_com_icraft_iras_model_Resource_emailAddress" property="emailAddress" z="y/ErVGtGgHenLosygmvM7TAKRI0="/>
         
         <table:column id="c_com_icraft_iras_model_Resource_resourceSkillLevels" property="resourceSkillLevels" z="MqeLeuKiKe2FhwezC4o0rgSA9mE="/>
+        <table:column id="c_com_icraft_iras_model_Resource_cvText" property="cvText" z="nsuCp7jK0nmkod/kz9HbdRCHwz0="/>
         </table:table>
     </page:list>
 </div>
