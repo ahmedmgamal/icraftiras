@@ -2,6 +2,7 @@ package com.icraft.iras.web;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
@@ -72,7 +73,7 @@ public class BatchUserUpload {
 				resource.setEmailAddress(nextLine[5]);
 				//initialize  set 
 				if (resource.getResourceSkillLevels() == null) {
-					resource.setResourceSkillLevels(new HashSet<ResourceSkillLevel>());
+					resource.setResourceSkillLevels(new ArrayList<ResourceSkillLevel>());
 				}
 				
 				// seach for skills column and adding them 
