@@ -6,7 +6,7 @@ package com.icraft.iras.model;
 import com.icraft.iras.model.ResourceSkillLevel;
 import java.lang.Integer;
 import java.lang.String;
-import java.util.Set;
+import java.util.List;
 
 privileged aspect Resource_Roo_JavaBean {
     
@@ -42,12 +42,20 @@ privileged aspect Resource_Roo_JavaBean {
         this.emailAddress = emailAddress;
     }
     
-    public Set<ResourceSkillLevel> Resource.getResourceSkillLevels() {
+    public List<ResourceSkillLevel> Resource.getResourceSkillLevels() {
         return this.resourceSkillLevels;
     }
     
-    public void Resource.setResourceSkillLevels(Set<ResourceSkillLevel> resourceSkillLevels) {
+    public void Resource.setResourceSkillLevels(List<ResourceSkillLevel> resourceSkillLevels) {
         this.resourceSkillLevels = resourceSkillLevels;
+    }
+    
+    public String Resource.getCvText() {
+        return this.cvText;
+    }
+    
+    public void Resource.setCvText(String cvText) {
+        this.cvText = cvText;
     }
     
 }

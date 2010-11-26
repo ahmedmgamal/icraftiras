@@ -9,6 +9,8 @@ privileged aspect ResourceSkillLevel_Roo_ToString {
     
     public String ResourceSkillLevel.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Id: ").append(getId()).append(", ");
+        sb.append("Version: ").append(getVersion()).append(", ");
         sb.append("Resource: ").append(getResource()).append(", ");
         sb.append("Skill: ").append(getSkill()).append(", ");
         sb.append("Lvl: ").append(getLvl());
