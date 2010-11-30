@@ -317,8 +317,8 @@ your
 yours
 yourself
 yourselves
-project 
-com 
+project
+com
 skills
 skill
 www
