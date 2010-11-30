@@ -16,6 +16,7 @@
     <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
             <menu:item id="i_controller__batchuseruploadindex_id" messageCode="global_generic" url="/batchuserupload/index" z="oIY38tK5Vse0wEcCIpN7B2H4jxE="/>
         <menu:item id="i_controller__loadcvsindex_id" messageCode="global_generic" url="/loadcvs/index" z="xoPU55GwC8j3pdp+Jx5H19Dg6zo="/>
+        <menu:item id="i_controller__findresourceindex_id" messageCode="global_generic" url="/findresource/index" z="+PL+8xQ6k+5SoSmJa7QoCnE4Ukc="/>
         </menu:category>
     <menu:category id="c_jobtitle" z="oxiWDJkVpIBbJUJgpiCoIUk+OEU=">
         <menu:item id="i_jobtitle_new" messageCode="global_menu_new" url="/jobtitles?form" z="ljbt3VrhcIIC0FCN3OgMiJvsuYg="/>
