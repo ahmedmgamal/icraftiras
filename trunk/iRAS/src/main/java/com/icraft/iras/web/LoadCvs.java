@@ -38,7 +38,7 @@ public class LoadCvs {
 	@RequestMapping(method = RequestMethod.POST)
 	public String get(@RequestParam("cvsFolder") String cvs, @RequestParam("pattern") String pattern,
 			ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) {
-
+int i=1;
 File cvsFolder = new File(cvs);
 		File[] cvsFiles = cvsFolder.listFiles();
 		for (File cvFile : cvsFiles)
@@ -51,7 +51,7 @@ File cvsFolder = new File(cvs);
 			try {
 				parser.parse(new FileInputStream(cvFile), handler, metadata);
 
-				System.out.println("\n" + cvFile.getPath() + ":\t");
+				System.out.print("\n"+i++ + cvFile.getPath() + ":\t");
 				String cvText = handler.toString();
 
 				Pattern email = Pattern.compile("([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})",
@@ -59,21 +59,23 @@ File cvsFolder = new File(cvs);
 				Set<String>  emails =new HashSet<String>();
 				
 				
+				
 				Matcher fit = email.matcher(cvText);
 				while (fit.find()) {
 					String extractedEmail=fit.group();
+					System.out.print(extractedEmail+"\t");
 					emails.add(extractedEmail);
 				}
 				//add update cv file in db 
 
-				
+				if(emails.size()>0){
 				TypedQuery<Resource>  resourcesQuery =Resource.findResourcesInEmailAddressSet(emails);
 				List<Resource> resources=resourcesQuery.getResultList();
 				if (resources != null && resources.size()>0){
 				Resource r=	resources.get(0);
 				r.setCvText(cvText);
 				r.merge();
-				System.out.println(r);
+			
 				}else{
 					Resource r=	new Resource ();
 					r.setId(new Long("0"));
@@ -86,7 +88,7 @@ File cvsFolder = new File(cvs);
 					
 				}
 			
-				
+				}
 				
 				
 				
