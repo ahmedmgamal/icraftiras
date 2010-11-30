@@ -34,7 +34,7 @@ public class FindResourceController {
 
     @RequestMapping(method = RequestMethod.POST)
     public void get(ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) {
-    	System.out.println("FindResourceController.get()");
+    	 
     }
     @RequestMapping(method = RequestMethod.POST, value = "findSkill")
 	public String get(@RequestParam("skill") String skill, Model model, HttpServletRequest request,
@@ -68,6 +68,7 @@ public class FindResourceController {
 			Filter<Tag> dictionaryFilter = new DictionaryFilter(new Scanner(new File (request.getSession().getServletContext().getRealPath("\\WEB-INF\\classes")+"\\stopWords.txt")));
 			
 			cloud.addInputFilter(dictionaryFilter);
+			System.out.println(cloud.getWordPattern());
 			
 	
 	
@@ -80,16 +81,16 @@ public class FindResourceController {
 			for (Resource resource:allResources){
 				
 				cloud.addText(resource.cvText);
-				System.out.println("cv add for "+resource.getFullName());
+				
 			}
 //			/System.out.println("___________________________");
 //			System.out.println(cloud.allTags().size());
 //			DataOutputStream allTagsOutput = new DataOutputStream(new FileOutputStream("g:\\allTags.txt"));
 //
-			for (Tag t:cloud.tags(  new Tag.ScoreComparatorDesc())){
-				System.out.println((t.getName()+"\t"+t.getScore()));
-			
-			}
+//			for (Tag t:cloud.tags(  new Tag.ScoreComparatorDesc())){
+//				System.out.println((t.getName()+"\t"+t.getScore()));
+//			
+//			}
 			model.addAttribute("cloud",cloud);
 			model.addAttribute("tags",cloud.tags(new Tag.ScoreComparatorDesc()));
 			
