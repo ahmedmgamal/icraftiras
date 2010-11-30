@@ -56,9 +56,7 @@ public class Resource {
         if (emailAddressSet == null || emailAddressSet.size() == 0) throw new IllegalArgumentException("The emailAddress argument is required");
         EntityManager em = Resource.entityManager();
         TypedQuery<Resource> q = em.createQuery("SELECT Resource FROM Resource AS resource WHERE resource.emailAddress in (:emailAddressSet) ", Resource.class);
-        List<String> emails=new ArrayList<String> ();
-        emails.add("somaya.rayan@yahoo.com");
-        emails.add("aho@jjj.com");
+       
 	       
         
        q.setParameter("emailAddressSet",emailAddressSet);
