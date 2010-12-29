@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+  <jsp:output omit-xml-declaration="yes"/>
+  
+  <form action="titlejob/calc" method="post">
+  <table>
+  <tr>
+  <td>
+  <table>
+  <c:forEach items="${reqJobTitles}" var="item">
+ <tr>
+  <td>
+  ${item }
+   </td>
+   </tr>
+   </c:forEach>
+   </table>
+  </td>
+  <td>
+  <table>
+  <c:forEach items="${numOfResources }" var="item">
+ <tr>
+  <td>
+  ${item }
+   </td>
+   </tr> 
+  </c:forEach>
+  </table>
+</td>
+<td>
+<table>
+<c:forEach items="${RateOfHoure }" var="item">
+ <tr>
+  <td>
+  ${item }$
+   </td>
+   </tr> 
+  </c:forEach>
+
+</table>
+
+</td>
+</tr>
+<tr>
+<td colspan="2" bgcolor="#90EE90">
+total cost
+</td>
+<td colspan="1" bgcolor="#90EE90">
+  ${total }$
+  </td>
+  
+  </tr>
+  
+  
+  </table>
+  </form>
+  </div>

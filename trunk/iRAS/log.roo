@@ -215,3 +215,8 @@ controller class ~.web.LoadCvs
 // Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-11-29 06:29:25
 controller class --class ~.web.FindResourceController
 // Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-11-29 11:20:23
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-12-26 01:06:36
+controller class --class ~.web.titleJobController
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-12-26 01:41:22
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2010-12-26 02:19:46
+// Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2010-12-26 06:25:23
