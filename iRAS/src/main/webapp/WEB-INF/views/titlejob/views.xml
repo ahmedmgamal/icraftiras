@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="titlejob/index">
+        <put-attribute name="body" value="/WEB-INF/views/titlejob/index.jspx"/>
+    </definition>
+    
+        <definition extends="default" name="titlejob/list">
+        <put-attribute name="body" value="/WEB-INF/views/titlejob/titleJobList.jspx"/>
+    </definition>
+    
+       <definition extends="default" name="titlejob/balance">
+        <put-attribute name="body" value="/WEB-INF/views/titlejob/accountBalance.jspx"/>
+    </definition>
+</tiles-definitions>
