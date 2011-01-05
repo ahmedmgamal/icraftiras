@@ -40,9 +40,20 @@
 </table>
 
 </td>
+  <td>
+  <table>
+  <c:forEach items="${calculate}" var="item">
+ <tr>
+  <td>
+  ${item }
+   </td>
+   </tr> 
+  </c:forEach>
+  </table>
+</td>
 </tr>
 <tr>
-<td colspan="2" bgcolor="#90EE90">
+<td colspan="3" bgcolor="#90EE90">
 total cost
 </td>
 <td colspan="1" bgcolor="#90EE90">
