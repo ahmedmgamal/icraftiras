@@ -24,24 +24,33 @@ public class TitleJobController {
     List<String> required=new ArrayList<String>();
     List<Double>  houreRate=new ArrayList<Double>();
     List<Double> houre=new ArrayList<Double>();
+    List<Integer> resourceNum=new ArrayList<Integer>();
+    List<Double> calcList=new ArrayList<Double>();
+    
     	int i;
     	Double sum=0.0;
     	for(i=0;i<jobTitles.length;i++){
     		long v=jobTitles[i];
     		JobTitle job=JobTitle.findJobTitle(v);
-    		required.add(job.getTitle());
     		Double x=job.getAverageRate();
-    		houre.add(x);
     		int y=Integer.parseInt(resourceNumber[i]);
     		Double z=x*y;
     		sum+=z;
+    		if(z!=0){
+    			required.add(job.getTitle());
+    			houre.add(x);
+    			resourceNum.add(y);
+    			calcList.add(z);
+    		}
+    		
     	}
     	houreRate=houre;
     	requiredJobTitle=required;
     	modelMap.addAttribute("reqJobTitles",requiredJobTitle);
     	modelMap.addAttribute("RateOfHoure", houreRate);
-    	modelMap.addAttribute("numOfResources", resourceNumber);
+    	modelMap.addAttribute("numOfResources", resourceNum);
     	modelMap.addAttribute("total",sum);
+    	modelMap.addAttribute("calculate",calcList);
     	
     
     	
