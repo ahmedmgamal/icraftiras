@@ -12,5 +12,22 @@
     
     <field:display field="resourceSkillLevels" id="s_com_icraft_iras_model_Resource_resourceSkillLevels" object="${resource}" z="1stIVmsP5GbVoW5lOFPzv+U+gbA="/>
     <field:display field="cvText" id="s_com_icraft_iras_model_Resource_cvText" object="${resource}" z="OSf302DZyG+n/ez5PqLkNEXxHCU="/>
+    <field:display field="address" id="s_com_icraft_iras_model_Resource_address" object="${resource}" z="CVRJe7BPT6Wrl+DmjisAXxS3gXg="/>
+    <field:display field="region" id="s_com_icraft_iras_model_Resource_region" object="${resource}" z="EwZBtD8U+mf4AE7I170bXMCEU5k="/>
+    <field:display field="mobile" id="s_com_icraft_iras_model_Resource_mobile" object="${resource}" z="W+9lWqOxBc0uUMkMfrd39OHDtbA="/>
+    <field:display field="dateOfBirth" id="s_com_icraft_iras_model_Resource_dateOfBirth" object="${resource}" z="opNNDFJoBQBJCn7iB3O9/rWPPXU="/>
+    <field:display field="faculty" id="s_com_icraft_iras_model_Resource_faculty" object="${resource}" z="+U4cFadKOSW26uW4ncN/dA03gYw="/>
+    <field:display field="yearOfGraduate" id="s_com_icraft_iras_model_Resource_yearOfGraduate" object="${resource}" z="gq8bjR0hT9dacfV2+DBL6zIVf60="/>
+    <field:display field="grade" id="s_com_icraft_iras_model_Resource_grade" object="${resource}" z="tzw4IrFeBjgtmslnMOlm1bm2pqg="/>
+    <field:display field="course" id="s_com_icraft_iras_model_Resource_course" object="${resource}" z="3uU48FSpp8wqkAGeKzAcoa7zjbY="/>
+    <field:display field="certificates" id="s_com_icraft_iras_model_Resource_certificates" object="${resource}" z="xapKCBU4jasT+YEcp39RcXja26M="/>
+    <field:display field="otherTechno" id="s_com_icraft_iras_model_Resource_otherTechno" object="${resource}" z="xwJFBDbcJa/oXfRyGzEyRyfOrfw="/>
+    <field:display field="blackBelt" id="s_com_icraft_iras_model_Resource_blackBelt" object="${resource}" z="Gy4pM8ryKZtf/LLimCXMXrBKP1c="/>
+    <field:display field="currentEmployer" id="s_com_icraft_iras_model_Resource_currentEmployer" object="${resource}" z="I4tb1JD9cfoKzAr4PrNlbwge1qw="/>
+    <field:display field="curentJobTitle" id="s_com_icraft_iras_model_Resource_curentJobTitle" object="${resource}" z="alyXclc9mNBSXyQzB5+u3rlEpRo="/>
+    <field:display field="availabilatyForWork" id="s_com_icraft_iras_model_Resource_availabilatyForWork" object="${resource}" z="C33ah0OnmfygC5OtQhzSKH26ynk="/>
+    <field:display field="roole" id="s_com_icraft_iras_model_Resource_roole" object="${resource}" z="3PtGsyso7+bwaeQ7MFAEUsLYWOs="/>
+    <field:display field="university" id="s_com_icraft_iras_model_Resource_university" object="${resource}" z="qYtBTtq3vIjZ/7ADaVOQLZN2bRc="/>
+    
     </page:show>
 </div>

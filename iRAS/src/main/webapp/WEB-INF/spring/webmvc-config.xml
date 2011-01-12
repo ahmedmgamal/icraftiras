@@ -17,7 +17,7 @@
 	<mvc:resources location="/" mapping="/resources/**"/>
 	
 	<!-- Allows for mapping the DispatcherServlet to "/" by forwarding static resource requests to the container's default Servlet -->
-	<mvc:default-servlet-handler default-servlet-name="_ah_default" />
+	<mvc:default-servlet-handler default-servlet-name="_ah_default"/>
 
 	<!-- register "global" interceptor beans to apply to all registered HandlerMappings -->
 	<mvc:interceptors>
@@ -26,7 +26,8 @@
 	</mvc:interceptors>
 	
 	<!-- selects a static view for rendering without the need for an explicit controller -->
-	<mvc:view-controller path="/" view-name="index"/>
+	<mvc:view-controller path="/login"/>
+    <mvc:view-controller path="/" view-name="index"/>
 	<mvc:view-controller path="/uncaughtException"/>
 	<mvc:view-controller path="/resourceNotFound"/>
 	<mvc:view-controller path="/dataAccessFailure"/>

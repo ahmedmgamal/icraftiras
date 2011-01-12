@@ -2,6 +2,6 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:output omit-xml-declaration="yes"/>
     <form:find finderName="ByEmailAddress" id="ff_com_icraft_iras_model_Resource" path="/resources" z="RWft9qHaOwWJtxlqNDV19b6LO9k=">
-        <field:input disableFormBinding="true" field="emailAddress" id="f_com_icraft_iras_model_Resource_emailAddress" validationMessageCode="field_invalid_email" z="aJSU4XtibbdzrE7MBmMhwCWReug="/>
+        <field:input disableFormBinding="true" field="emailAddress" id="f_com_icraft_iras_model_Resource_emailAddress" required="true" validationMessageCode="field_invalid_email" z="J9FrC6AIsrv+fUkqZ7D8F8xIpT0="/>
     </form:find>
 </div>

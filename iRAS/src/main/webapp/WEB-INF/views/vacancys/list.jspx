@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_icraft_iras_model_Vacancy" items="${vacancys}" z="WMhgESI7feChgk7D7bEafEX4cRE=">
+        <table:table data="${vacancys}" id="l_com_icraft_iras_model_Vacancy" path="/vacancys" z="u2uQKJoVAjpGevF1hvhiDOaAeqc=">
+            <table:column id="c_com_icraft_iras_model_Vacancy_jobTitle" property="jobTitle" z="aHtOuIrmvaAcLS/Ob87T9PHtyCs="/>
+            <table:column id="c_com_icraft_iras_model_Vacancy_description" property="description" z="MigXOEJyl24RXB6G5y1KULiW89k="/>
+            <table:column id="c_com_icraft_iras_model_Vacancy_qualifications" property="qualifications" z="FydcfxsbZAp7C6rvxFSUxRfhx2U="/>
+            <table:column id="c_com_icraft_iras_model_Vacancy_skills" property="skills" z="2PfcsO+CxwQBglhG3jqTw3+a4/c="/>
+        </table:table>
+    </page:list>
+</div>

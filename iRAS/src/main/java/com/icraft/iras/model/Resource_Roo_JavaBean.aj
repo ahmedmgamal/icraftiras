@@ -58,4 +58,132 @@ privileged aspect Resource_Roo_JavaBean {
         this.cvText = cvText;
     }
     
+    public String Resource.getAddress() {
+        return this.address;
+    }
+    
+    public void Resource.setAddress(String address) {
+        this.address = address;
+    }
+    
+    public String Resource.getRegion() {
+        return this.region;
+    }
+    
+    public void Resource.setRegion(String region) {
+        this.region = region;
+    }
+    
+    public String Resource.getMobile() {
+        return this.mobile;
+    }
+    
+    public void Resource.setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+    
+    public String Resource.getDateOfBirth() {
+        return this.dateOfBirth;
+    }
+    
+    public void Resource.setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+    
+    public String Resource.getFaculty() {
+        return this.faculty;
+    }
+    
+    public void Resource.setFaculty(String faculty) {
+        this.faculty = faculty;
+    }
+    
+    public String Resource.getYearOfGraduate() {
+        return this.yearOfGraduate;
+    }
+    
+    public void Resource.setYearOfGraduate(String yearOfGraduate) {
+        this.yearOfGraduate = yearOfGraduate;
+    }
+    
+    public String Resource.getGrade() {
+        return this.grade;
+    }
+    
+    public void Resource.setGrade(String grade) {
+        this.grade = grade;
+    }
+    
+    public String Resource.getCourse() {
+        return this.course;
+    }
+    
+    public void Resource.setCourse(String course) {
+        this.course = course;
+    }
+    
+    public String Resource.getCertificates() {
+        return this.certificates;
+    }
+    
+    public void Resource.setCertificates(String certificates) {
+        this.certificates = certificates;
+    }
+    
+    public String Resource.getOtherTechno() {
+        return this.otherTechno;
+    }
+    
+    public void Resource.setOtherTechno(String otherTechno) {
+        this.otherTechno = otherTechno;
+    }
+    
+    public String Resource.getBlackBelt() {
+        return this.blackBelt;
+    }
+    
+    public void Resource.setBlackBelt(String blackBelt) {
+        this.blackBelt = blackBelt;
+    }
+    
+    public String Resource.getCurrentEmployer() {
+        return this.currentEmployer;
+    }
+    
+    public void Resource.setCurrentEmployer(String currentEmployer) {
+        this.currentEmployer = currentEmployer;
+    }
+    
+    public String Resource.getCurentJobTitle() {
+        return this.curentJobTitle;
+    }
+    
+    public void Resource.setCurentJobTitle(String curentJobTitle) {
+        this.curentJobTitle = curentJobTitle;
+    }
+    
+    public Integer Resource.getAvailabilatyForWork() {
+        return this.availabilatyForWork;
+    }
+    
+    public void Resource.setAvailabilatyForWork(Integer availabilatyForWork) {
+        this.availabilatyForWork = availabilatyForWork;
+    }
+    
+    public String Resource.getRoole() {
+        return this.roole;
+    }
+    
+    public void Resource.setRoole(String roole) {
+        this.roole = roole;
+    }
+    
+    public String Resource.getUniversity() {
+        return this.university;
+    }
+    
+    public void Resource.setUniversity(String university) {
+        this.university = university;
+    }
+    
 }

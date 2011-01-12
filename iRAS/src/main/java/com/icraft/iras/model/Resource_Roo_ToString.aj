@@ -16,7 +16,23 @@ privileged aspect Resource_Roo_ToString {
         sb.append("ExpectedSalary: ").append(getExpectedSalary()).append(", ");
         sb.append("EmailAddress: ").append(getEmailAddress()).append(", ");
         sb.append("ResourceSkillLevels: ").append(getResourceSkillLevels() == null ? "null" : getResourceSkillLevels().size()).append(", ");
-        sb.append("CvText: ").append(getCvText());
+        sb.append("CvText: ").append(getCvText()).append(", ");
+        sb.append("Address: ").append(getAddress()).append(", ");
+        sb.append("Region: ").append(getRegion()).append(", ");
+        sb.append("Mobile: ").append(getMobile()).append(", ");
+        sb.append("DateOfBirth: ").append(getDateOfBirth()).append(", ");
+        sb.append("Faculty: ").append(getFaculty()).append(", ");
+        sb.append("YearOfGraduate: ").append(getYearOfGraduate()).append(", ");
+        sb.append("Grade: ").append(getGrade()).append(", ");
+        sb.append("Course: ").append(getCourse()).append(", ");
+        sb.append("Certificates: ").append(getCertificates()).append(", ");
+        sb.append("OtherTechno: ").append(getOtherTechno()).append(", ");
+        sb.append("BlackBelt: ").append(getBlackBelt()).append(", ");
+        sb.append("CurrentEmployer: ").append(getCurrentEmployer()).append(", ");
+        sb.append("CurentJobTitle: ").append(getCurentJobTitle()).append(", ");
+        sb.append("AvailabilatyForWork: ").append(getAvailabilatyForWork()).append(", ");
+        sb.append("Roole: ").append(getRoole()).append(", ");
+        sb.append("University: ").append(getUniversity());
         return sb.toString();
     }
     
