@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_icraft_iras_model_Vacancy" object="${vacancy}" path="/vacancys" z="LQxIRbmhygirDnbe25Pf39OKSv4=">
+        <field:display field="jobTitle" id="s_com_icraft_iras_model_Vacancy_jobTitle" object="${vacancy}" z="0Gzu01Ar+8XigaTI5u8UrxVr6C0="/>
+        <field:display field="description" id="s_com_icraft_iras_model_Vacancy_description" object="${vacancy}" z="H/giPBPIpCjSxr3LjVYNHXc1VVk="/>
+        <field:display field="qualifications" id="s_com_icraft_iras_model_Vacancy_qualifications" object="${vacancy}" z="ZH4+NaBdLpuZoGLhXgZf/Yzkm5M="/>
+        <field:display field="skills" id="s_com_icraft_iras_model_Vacancy_skills" object="${vacancy}" z="N+zIdPbCmYKosQ8QeyFblnqGfOc="/>
+    </page:show>
+</div>

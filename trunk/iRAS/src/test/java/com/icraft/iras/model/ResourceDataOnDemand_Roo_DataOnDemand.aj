@@ -18,10 +18,26 @@ privileged aspect ResourceDataOnDemand_Roo_DataOnDemand {
     
     public Resource ResourceDataOnDemand.getNewTransientResource(int index) {
         com.icraft.iras.model.Resource obj = new com.icraft.iras.model.Resource();
+        obj.setAddress("address_" + index);
+        obj.setAvailabilatyForWork(new Integer(index));
+        obj.setBlackBelt("blackBelt_" + index);
+        obj.setCertificates("certificates_" + index);
+        obj.setCourse("course_" + index);
+        obj.setCurentJobTitle("curentJobTitle_" + index);
+        obj.setCurrentEmployer("currentEmployer_" + index);
         obj.setCvText(null);
+        obj.setDateOfBirth("dateOfBirth_" + index);
         obj.setEmailAddress("emailAddress_" + index);
         obj.setExpectedSalary(new Integer(index).doubleValue());
+        obj.setFaculty("faculty_" + index);
         obj.setFullName("fullName_" + index);
+        obj.setGrade("grade_" + index);
+        obj.setMobile("mobile_" + index);
+        obj.setOtherTechno("otherTechno_" + index);
+        obj.setRegion("region_" + index);
+        obj.setRoole("roole_" + index);
+        obj.setUniversity("university_" + index);
+        obj.setYearOfGraduate("yearOfGraduate_" + index);
         obj.setYearsOfExperience(new Integer(index));
         return obj;
     }
