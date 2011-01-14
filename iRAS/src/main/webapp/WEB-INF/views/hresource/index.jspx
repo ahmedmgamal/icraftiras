@@ -6,6 +6,8 @@
     <spring:message code="application_name" var="app_name"/>
     <h3>
       <spring:message arguments="${app_name}" code="welcome_titlepane"/>
+      
     </h3>
+    <h3>thanks for your registration ${member_name }</h3>
   </util:panel>
 </div>

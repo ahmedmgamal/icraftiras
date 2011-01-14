@@ -11,13 +11,13 @@
     
     
     <field:simple field="resourceSkillLevels" id="c_com_icraft_iras_model_Resource_resourceSkillLevels" messageCode="entity_reference_not_managed" messageCodeAttribute="List" z="TmLgXrL0DwvW58pyn1UirZZB3F4="/>
-    <field:textarea field="cvText" id="c_com_icraft_iras_model_Resource_cvText" z="5q7nvnZJi8QnnRS9b4TER+345sA="/>
+    
     <field:input field="address" id="c_com_icraft_iras_model_Resource_address" required="true" z="qlhT2/4EJPZynhiy3cUTVNiMSHs="/>
     <field:input field="region" id="c_com_icraft_iras_model_Resource_region" required="true" z="n05baamB2AJa179a4mklMibqhI4="/>
     <field:input field="mobile" id="c_com_icraft_iras_model_Resource_mobile" required="true" z="b45PyH7giRghYYaZrPm6b2XkhuA="/>
     <field:input field="dateOfBirth" id="c_com_icraft_iras_model_Resource_dateOfBirth" required="true" z="Xf4Hk9C7LHceW88ThB2TZAGc3s0="/>
     <field:input field="faculty" id="c_com_icraft_iras_model_Resource_faculty" required="true" z="kUjQu5DAepaJE6Yxfy3s4SXePbA="/>
-    <field:input field="yearOfGraduate" id="c_com_icraft_iras_model_Resource_yearOfGraduate" required="true" z="TnZPzO+vJ7lgoCjfpKa01rmjM4s="/>
+    <field:input field="yearOfGraduate" id="c_com_icraft_iras_model_Resource_yearOfGraduate" required="true" validationMessageCode="field_invalid_integer" z="zGzVXSSfDwW/12be9m7lRh/0wW4="/>
     <field:input field="grade" id="c_com_icraft_iras_model_Resource_grade" required="true" z="r8zfX8bKvUQxmvo9RgGxFX6syuk="/>
     <field:input field="course" id="c_com_icraft_iras_model_Resource_course" z="MeGn317NF5OQonoLJPrHBM8mLXs="/>
     <field:input field="certificates" id="c_com_icraft_iras_model_Resource_certificates" z="IGzSls42UZrQRMfYu/wK6f47dl4="/>
@@ -29,6 +29,7 @@
     <field:input field="roole" id="c_com_icraft_iras_model_Resource_roole" required="true" z="UIw1PwdBvH0+8ri1SAny0tE7LUA="/>
     <field:input field="university" id="c_com_icraft_iras_model_Resource_university" required="true" z="bfCcFDwj//tNEESXqJj9IvPNz1E="/>
     
+    <field:textarea field="cvText" id="c_com_icraft_iras_model_Resource_cvText" z="5q7nvnZJi8QnnRS9b4TER+345sA="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_icraft_iras_model_Resource" render="${not empty dependencies}" z="eI3mM/WIwwFsT+p3xXKqaMApCY8="/>
 </div>

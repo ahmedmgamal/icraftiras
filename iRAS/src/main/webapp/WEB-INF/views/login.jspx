@@ -1,7 +1,7 @@
 <div xmlns:spring="http://www.springframework.org/tags" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
   <jsp:output omit-xml-declaration="yes" />
   <spring:message code="security_login_title" var="title" />
-  <util:panel id="title" title="${title}">
+  <util:panel id="title" title="IRas Security Login">
     <c:if test="${not empty param.login_error}">
       <div class="errors">
         <p>
@@ -13,7 +13,7 @@
     </c:if>
     <c:if test="${empty param.login_error}">
       <p>
-        <spring:message code="security_login_message" />
+        
       </p>
     </c:if>
     <spring:url value="/resources/j_spring_security_check" var="form_url" />

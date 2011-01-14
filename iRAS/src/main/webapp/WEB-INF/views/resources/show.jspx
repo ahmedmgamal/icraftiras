@@ -11,7 +11,7 @@
     
     
     <field:display field="resourceSkillLevels" id="s_com_icraft_iras_model_Resource_resourceSkillLevels" object="${resource}" z="1stIVmsP5GbVoW5lOFPzv+U+gbA="/>
-    <field:display field="cvText" id="s_com_icraft_iras_model_Resource_cvText" object="${resource}" z="OSf302DZyG+n/ez5PqLkNEXxHCU="/>
+    
     <field:display field="address" id="s_com_icraft_iras_model_Resource_address" object="${resource}" z="CVRJe7BPT6Wrl+DmjisAXxS3gXg="/>
     <field:display field="region" id="s_com_icraft_iras_model_Resource_region" object="${resource}" z="EwZBtD8U+mf4AE7I170bXMCEU5k="/>
     <field:display field="mobile" id="s_com_icraft_iras_model_Resource_mobile" object="${resource}" z="W+9lWqOxBc0uUMkMfrd39OHDtbA="/>
@@ -29,5 +29,6 @@
     <field:display field="roole" id="s_com_icraft_iras_model_Resource_roole" object="${resource}" z="3PtGsyso7+bwaeQ7MFAEUsLYWOs="/>
     <field:display field="university" id="s_com_icraft_iras_model_Resource_university" object="${resource}" z="qYtBTtq3vIjZ/7ADaVOQLZN2bRc="/>
     
+    <field:display field="cvText" id="s_com_icraft_iras_model_Resource_cvText" object="${resource}" z="OSf302DZyG+n/ez5PqLkNEXxHCU="/>
     </page:show>
 </div>

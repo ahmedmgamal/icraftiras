@@ -37,7 +37,7 @@ privileged aspect ResourceDataOnDemand_Roo_DataOnDemand {
         obj.setRegion("region_" + index);
         obj.setRoole("roole_" + index);
         obj.setUniversity("university_" + index);
-        obj.setYearOfGraduate("yearOfGraduate_" + index);
+        obj.setYearOfGraduate(new Integer(index));
         obj.setYearsOfExperience(new Integer(index));
         return obj;
     }
