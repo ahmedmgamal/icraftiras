@@ -98,11 +98,11 @@ privileged aspect Resource_Roo_JavaBean {
         this.faculty = faculty;
     }
     
-    public String Resource.getYearOfGraduate() {
+    public Integer Resource.getYearOfGraduate() {
         return this.yearOfGraduate;
     }
     
-    public void Resource.setYearOfGraduate(String yearOfGraduate) {
+    public void Resource.setYearOfGraduate(Integer yearOfGraduate) {
         this.yearOfGraduate = yearOfGraduate;
     }
     

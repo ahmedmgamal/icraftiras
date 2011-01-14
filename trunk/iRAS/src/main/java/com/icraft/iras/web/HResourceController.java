@@ -32,14 +32,18 @@ public class HResourceController {
     @RequestMapping
     public String index(ModelMap modelMap, HttpServletRequest request) {
     	List<Lvl> skillLevel=new ArrayList<Lvl>();
-    	Long id=(long) 1;
+    	Long id=(long) 2;
     	Vacancy vac=Vacancy.findVacancy(id);
     	Set<Skill> resourceSkill=new HashSet<Skill>();
     	resourceSkill=vac.getSkills();
     	skillLevel=Lvl.findAllLvls();
-    	
+    	String describe= vac.getDescription();
+    	String jobName=	vac.getJobTitle();
     	modelMap.addAttribute("skilsList", resourceSkill);
     	modelMap.addAttribute("sklLevel", skillLevel);
+    	modelMap.addAttribute("job_name", jobName);
+    	modelMap.addAttribute("job_describtion",describe );
+    	modelMap.addAttribute("job_skills",resourceSkill);
     	skillsList= resourceSkill;
     	
         return "hresource/sub";
@@ -47,13 +51,14 @@ public class HResourceController {
     
     @RequestMapping(method= RequestMethod.POST,value ="save")
     public String saveMethod(ModelMap modelMap, HttpServletRequest request){
-    	Resource resource=new Resource();
-    	for(Object o:skillsList){
-    		Skill skil=(Skill) o;
-    		String skillName=skil.getName();
-    		String skillValue=request.getParameter(skillName);
     	
-    	}
+    	List <ResourceSkillLevel> resSkillLevl=new ArrayList<ResourceSkillLevel>();
+    	
+    	//resource object
+    	
+    	Resource resource=new Resource();
+    	
+    	//set resource variabls
     	resource.setAddress(request.getParameter("Address"));
     	resource.setFullName(request.getParameter("name"));
     	resource.setDateOfBirth(request.getParameter("birthDate"));
@@ -63,7 +68,7 @@ public class HResourceController {
     	resource.setUniversity(request.getParameter("university"));
     	resource.setFaculty(request.getParameter("faculty"));
     	resource.setGrade(request.getParameter("grade"));
-    	resource.setYearOfGraduate(request.getParameter("yearOfGraduate"));
+    	resource.setYearOfGraduate(Integer.parseInt(request.getParameter("yearOfGraduate")));
     	resource.setCourse(request.getParameter("courses"));
     	resource.setCertificates(request.getParameter("certificates"));
     	resource.setOtherTechno(request.getParameter("other_techno"));
@@ -75,8 +80,29 @@ public class HResourceController {
     	resource.setAvailabilatyForWork(Integer.parseInt(request.getParameter("Availabilty_work_period")));
     	resource.setYearsOfExperience(Integer.parseInt(request.getParameter("num_experience")));
     	
+    	//set resource skill level list
+    	
+    	for(Object o:skillsList){
+    		Skill skil=(Skill) o;
+    		ResourceSkillLevel resourceSkilLevel=new ResourceSkillLevel();
+    		Lvl levl=new Lvl();
+    		String skillName=skil.getName();
+    		String skillValue=request.getParameter(skillName);
+    		int skillLevelId=Integer.parseInt(skillValue);
+    		long levelId=(long)skillLevelId;
+    		levl=Lvl.findLvl(levelId);
+    		resourceSkilLevel.setLvl(levl);
+    		resourceSkilLevel.setSkill(skil);
+    		resourceSkilLevel.setResource(resource);
+    		resSkillLevl.add(resourceSkilLevel);
+    		
+    	
+    	}
+    	resource.setResourceSkillLevels(resSkillLevl);
+    	resource.persist();
     	
     	
+    	modelMap.addAttribute("member_name",resource.getFullName() );
     	
     	
     	return"hresource/index";

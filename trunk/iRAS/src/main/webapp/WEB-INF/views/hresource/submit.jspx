@@ -2,240 +2,311 @@
 <div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
   <jsp:output omit-xml-declaration="yes"/>
   <util:panel title="please fill in this application to applay for this job" id="cv_app">
+  Job Title<br/><br/>
+   ${job_name}<br/><br/>
+   Describtion<br/><br/>
+  ${job_describtion}<br/><br/>
+  Technical Skills<br/><br/>
+  
+  <c:forEach items="${job_skills}" var="item">
+  ${item.name }<br/><br/>
+  </c:forEach>
+  
   <form action="hresource/save" method="Post">
   <table>
   <tr>
-  <td bgcolor="#90EE90" align="center">
-  Personal Information<br/>
-                    <br/>
-  </td>
-  </tr>
-   
+  
+  
+  <td bgcolor="#90EE90" align="center" colspan="3" >Personal Information</td> <br/>
+             <br/>                                                           
+ 
+  </tr> 
   <tr>
-  <td>
-  Full name<br/>
-  <input type="text" name="name"></input>
-  </td>
-  
+  <td>Full name</td>
+      </tr>
+      <tr>           
+  <td><input type="text" name="name"></input></td>
+  </tr>
+  <tr>
+  <td >Addrrss </td>
+  </tr>
+  <tr>
+  <td ><input type="text" name="Address"></input></td>
   </tr>
    <tr>
-  <td>
-  Address<br/>
-  <input type="text" name="Address"></input>
-  </td>
-  
+  <td >region</td>
   </tr>
-   <tr>
-  <td>
-  Region<br/>
-  <input type="text" name="region"></input>
-  </td>
-  
+  <tr>
+  <td ><input type="text" name="region"></input></td>
   </tr>
-   <tr>
-  <td>
-  Mobile<br/>
-  <input type="text" name="mobile"></input>
-  </td>
+  <tr>
   
+  <td >Mobile</td>
   </tr>
-   <tr>
-  <td>
-  Email<br/>
-  In case of selection for further steps , you will be contacted by this email . email has to be the same like the the one in your CV<br/>
-  <input type="text" name="email"></input>
-  </td>
-  
-  </tr>
-   <tr>
-  <td>
-  BirthDate<br/>
-  <input type="text" name="birthDate"></input>
-  </td>
+  <tr>
+  <td ><input type="text" name="mobile"></input></td>
   
   </tr>
   <tr>
-  <td bgcolor="#90EE90" align="center">
- Education<br/>
-             <br/> 
-  </td>
-  </tr>
-  
-  <tr>
-  <td>
-   University<br/>
-  <input type="text" name="university"></input>
-  </td>
-  </tr>
-   <tr>
-  <td>
-   Faculty/Department<br/>
-  <input type="text" name="faculty"></input>
-  </td>
-  </tr>
-   <tr>
-  <td>
-   Graduation Year<br/>
-  <input type="text" name="yearOfGraduate"></input>
-  </td>
-  </tr>
-   <tr>
-  <td>
-   Graduation Grade<br/>
-  <input type="text" name="grade"></input>
-  </td>
-  </tr>
-   <tr>
-  <td>
-   Training Courses<br/>
-  <input type="text" name="courses"></input>
-  </td>
-  </tr>
-     <tr>
-  <td>
-   Other Certificates<br/>
-  <input type="text" name="certificates"></input>
-  </td>
-  </tr>
-  
-  <tr>
-  <td bgcolor="#90EE90" align="center">
-  Technical Knowledge<br/>
-          <br/>
-  </td>
-  </tr>
- 
-  <c:forEach items="${skilsList}" var="item">
- <tr> 
- 
-  <td>
-  ${item.name }<br/>
-          <br/>
-  <c:forEach items="${sklLevel}" var="skil">
-  <input type="radio" name="${item.name }" value="${skil.name}" />${skil.name }
-  </c:forEach>
-  
-  </td>
- 
-  
-  </tr>
- </c:forEach>
- <tr>
- <td>
- Do you know any other technologies/frameworks ?Please list <br/>
- <input type="text" name="other_techno"></input>
- 
- </td>
+ <td > Email</td>
  </tr>
  <tr>
- <td>
- Which belt do you have from BlackBeltFactory.com? <br/>
- <input type="radio" name="BlackBelt" value="don`t_know_it" />I don't know what's BlackBeltFactory <br/>
- <input type="radio" name="BlackBelt" value="not_yet" />Not yet<br/>
- <input type="radio" name="BlackBelt" value="yellow" />Yellow<br/>
- <input type="radio" name="BlackBelt" value="orange" />Orange<br/>
- <input type="radio" name="BlackBelt" value="green" />Green<br/>
- <input type="radio" name="BlackBelt" value="blue" />Blue<br/>
- <input type="radio" name="BlackBelt" value="brown" />Brown<br/>
- <input type="radio" name="BlackBelt" value="black_WOW" />Black "WOW"<br/>
- 
- </td>
- </tr>
- <tr>
- <td bgcolor="#90EE90" align="center">
- Employment Information<br/>
-                     <br/>
- </td>
- </tr>
- <tr>
- <td>
- Current Employer (if exists) <br/>
- <input type="text" name="Current_Employer"></input>
- 
- </td>
- </tr>
- 
- <tr>
- <td>
- Current Job Title  <br/>
- <input type="text" name="current_job_title"></input>
- 
- </td>
- </tr>
- 
- <tr>
- 
- <td>
- Numbers of years of experience in IT Field<br/>
- <input type="radio" name="num_experience" value="one" />1
-  <input type="radio" name="num_experience" value="two" />2
-   <input type="radio" name="num_experience" value="three" />3
-    <input type="radio" name="num_experience" value="four" />4
-     <input type="radio" name="num_experience" value="five" />5
-      <input type="radio" name="num_experience" value="six" />6
-       <input type="radio" name="num_experience" value="seven" />7
-        <input type="radio" name="num_experience" value="eight" />8
-         <input type="radio" name="num_experience" value="nine" />9
-          <input type="radio" name="num_experience" value="ten" />10 years
- 
- </td>
- 
- 
- </tr>
- 
- 
- <tr>
- <td>
- Availability for work when are you able to start work with ICraft ?<br/>
- <input type="text" name="Availabilty_work_period"></input>
- 
- </td>
- </tr>
- 
- 
- <tr>
- <td>
- Expected Net Salary <br/>
- <input type="text" name="expected_salary"></input>
- 
- </td>
- </tr>
- 
- 
- <tr>
- <td>
- What is the most important for you in new work <br/>
- <input type="text" name="role"></input>
 
+  <td ><input type="text" name="email"></input> In case of selection for further steps , you will be contacted by this email . email has to be the same like the the one in your CV<br/></td> 
+  </tr>
  
- </td>
+  
+  <tr>
+  <td >BirthDate</td>
+  </tr>
+  <tr>
+  <td><input type="text" name="birthDate"></input>  dd-mm-yyyy</td>
+ </tr>
+  
+   <tr>
+  <td   bgcolor="#90EE90" align="center" colspan="2">
+ Education<br/>
+  </td>
+  </tr>
+  
+  
+    <tr>
+ <td >University</td> 
  </tr>
  <tr>
  
- <td  align="center">
+ <td ><input type="text" name="university"></input></td>
+  
+  
+  </tr>
+  
+     <tr>
+   <td >Faculty/Department</td>
+   </tr>
+   <tr>
+  
+  <td ><input type="text" name="faculty"></input></td>
+  
+  
+  </tr>
+  
+  
+  
+    <tr>
+ <td >Graduation Year</td>
+ </tr>
+ <tr>
  
- <input type="submit" value="save"></input>
+  
+  <td ><input type="text" name="yearOfGraduate"></input></td>
+  
+  
+  </tr>
+  
+  
+
+  
+  
+  
+  
+    <tr>
+ <td >Graduation Grade</td>
+ </tr>
+ <tr>
+  
+  <td > <input type="text" name="grade"></input></td>
+  
+  
+  </tr>
+  
+  
+
+  
+  
+  
+    <tr>
+ <td >Training Courses</td>
+  </tr>
+  <tr>
+  <td > <input type="text" name="courses"></input></td>
+  
+  
+  </tr>
+    <tr>
+ <td >Other Certificates</td>
+ </tr>
+ <tr>
+  
+  <td><input type="text" name="certificates"></input></td>
+  
+  
+  </tr>
+  
+  
+
+  
+  
+  
+  
+  <tr>
+  <td bgcolor="#90EE90" align="center" colspan="2">
+  Technical Knowledge<br/>
+  </td>
+  </tr>
+  
+  <c:forEach items="${skilsList}" var="item">
+    <tr>
+  <td>${item.name }</td>
+  </tr>
+  <tr>
+  <td>
+  <c:forEach items="${sklLevel}" var="skil">
+  <input type="radio" name="${item.name }" value="${skil.id}" />${skil.name } </c:forEach></td>
+  
+  
+  </tr>
+  </c:forEach>
+
+
+  
+    <tr>
+ <td>Which belt do you have from BlackBeltFactory.com?</td>
+ </tr>
+ <tr>
+  
+  <td><input type="radio" name="BlackBelt" value="don`t_know_it" />I don't know it 
+ <input type="radio" name="BlackBelt" value="not_yet" />Not yet
+ <input type="radio" name="BlackBelt" value="yellow" />Yellow
+ <input type="radio" name="BlackBelt" value="orange" />Orange
+ <input type="radio" name="BlackBelt" value="green" />Green
+ <input type="radio" name="BlackBelt" value="blue" />Blue
+ <input type="radio" name="BlackBelt" value="brown" />Brown
+ <input type="radio" name="BlackBelt" value="black_WOW" />Black
+  </td>
+  
+  </tr>
+  
+  
+  
+      <tr>
+<td> Do you know any other technologies/frameworks ?Please list</td>
+</tr>
+<tr>
+  
+  <td> <input type="text" name="other_techno"></input></td>
+  
+  
+  </tr>
+  
+  
+  
+ 
+   <tr>
+ <td  bgcolor="#90EE90" align="center" colspan="2">
+ Employment Information<br/>
+               
  </td>
  </tr>
+  
+  
+    <tr>
+ <td>Current Employer (if exists)</td>
+ </tr>
+ <tr>
+  
+  <td> <input type="text" name="Current_Employer"></input></td>
+  
+  
+  </tr>
+  
+  
+    <tr>
+ <td>Current Job Title</td>
+ </tr>
+ <tr>
+  
+  <td><input type="text" name="current_job_title"></input></td>
+  
+  
+  </tr>
  
-   
+    <tr>
+ <td>Numbers of years of experience in IT Field</td> 
+ </tr>
+ <tr>
+  
+  <td><input type="radio" name="num_experience" value="1" />1
+  <input type="radio" name="num_experience" value="2" />2
+   <input type="radio" name="num_experience" value="3" />3
+    <input type="radio" name="num_experience" value="4" />4
+     <input type="radio" name="num_experience" value="5" />5
+      <input type="radio" name="num_experience" value="6" />6
+       <input type="radio" name="num_experience" value="7" />7
+        <input type="radio" name="num_experience" value="8" />8
+         <input type="radio" name="num_experience" value="9" />9
+          <input type="radio" name="num_experience" value="10" />10 years</td>
+  
+  
+  </tr>
+  
+  
+    <tr>
+ <td>Availability for work when are you able to start work with ICraft ?</td> 
+ </tr>
+ <tr>
+  
+  <td><input type="text" name="Availabilty_work_period"></input> insert number of days </td>
+  
+  
+  </tr>
+
+    <tr>
+ <td>Expected Net Salary</td>
+ </tr>
+ <tr>
+  
+  <td> <input type="text" name="expected_salary"></input></td>
+  
+  
+  </tr>
+  
+  
+  
+  
+    <tr>
+<td>What is the most important for you in new work</td>
+</tr>
+<tr>
+  
+  <td ><input type="text" name="role"></input></td>
+  
+  
+  </tr>
+  
+  
+  
+    <tr>
+ 
+  <td align="center"><input type="submit" value="save" ></input></td>
+  
+  
+  
+  
+  </tr>
+  
+  
+ 
+  
+  
   </table>
   
-  
-  
+   
   
   
   </form>
-  
-  
+ 
   
   </util:panel>
-  
-  
-  
-  
-  
-  
   
   
   </div>

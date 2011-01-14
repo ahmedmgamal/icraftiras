@@ -51,7 +51,7 @@ public class Resource {
     private String faculty;
     
     @NotNull
-    private String yearOfGraduate;
+    private Integer yearOfGraduate;
    
     @NotNull
     private String grade;
