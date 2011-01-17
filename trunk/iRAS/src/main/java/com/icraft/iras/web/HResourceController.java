@@ -6,11 +6,14 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.ModelMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.jsp.el.ELParseException;
+
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.icraft.iras.model.Lvl;
@@ -29,10 +32,9 @@ public class HResourceController {
     }
 
 
-    @RequestMapping
-    public String index(ModelMap modelMap, HttpServletRequest request) {
+    @RequestMapping(value="/{Id}")
+    public String index(@PathVariable("Id") long id,ModelMap modelMap, HttpServletRequest request) {
     	List<Lvl> skillLevel=new ArrayList<Lvl>();
-    	Long id=(long) 2;
     	Vacancy vac=Vacancy.findVacancy(id);
     	Set<Skill> resourceSkill=new HashSet<Skill>();
     	resourceSkill=vac.getSkills();
@@ -58,35 +60,19 @@ public class HResourceController {
     	
     	Resource resource=new Resource();
     	
-    	//set resource variabls
-    	resource.setAddress(request.getParameter("Address"));
-    	resource.setFullName(request.getParameter("name"));
-    	resource.setDateOfBirth(request.getParameter("birthDate"));
-    	resource.setMobile(request.getParameter("mobile"));
-    	resource.setEmailAddress(request.getParameter("email"));
-    	resource.setRegion(request.getParameter("region"));
-    	resource.setUniversity(request.getParameter("university"));
-    	resource.setFaculty(request.getParameter("faculty"));
-    	resource.setGrade(request.getParameter("grade"));
-    	resource.setYearOfGraduate(Integer.parseInt(request.getParameter("yearOfGraduate")));
-    	resource.setCourse(request.getParameter("courses"));
-    	resource.setCertificates(request.getParameter("certificates"));
-    	resource.setOtherTechno(request.getParameter("other_techno"));
-    	resource.setBlackBelt(request.getParameter("BlackBelt"));
-    	resource.setCurrentEmployer(request.getParameter("Current_Employer"));
-    	resource.setExpectedSalary(Double.parseDouble(request.getParameter("expected_salary")));
-    	resource.setCurentJobTitle(request.getParameter("current_job_title"));
-    	resource.setRoole(request.getParameter("role"));
-    	resource.setAvailabilatyForWork(Integer.parseInt(request.getParameter("Availabilty_work_period")));
-    	resource.setYearsOfExperience(Integer.parseInt(request.getParameter("num_experience")));
-    	
-    	//set resource skill level list
+	//set resource skill level list
     	
     	for(Object o:skillsList){
     		Skill skil=(Skill) o;
     		ResourceSkillLevel resourceSkilLevel=new ResourceSkillLevel();
     		Lvl levl=new Lvl();
     		String skillName=skil.getName();
+    		if(request.getParameter(skillName)==null){
+    			return"hresource/error";
+    		}
+    		
+    	
+    		else{
     		String skillValue=request.getParameter(skillName);
     		int skillLevelId=Integer.parseInt(skillValue);
     		long levelId=(long)skillLevelId;
@@ -95,10 +81,50 @@ public class HResourceController {
     		resourceSkilLevel.setSkill(skil);
     		resourceSkilLevel.setResource(resource);
     		resSkillLevl.add(resourceSkilLevel);
-    		
+    		}
     	
     	}
     	resource.setResourceSkillLevels(resSkillLevl);
+   
+    	
+    	
+    	//validate
+    	if(request.getParameter("Address")==""||request.getParameter("Availabilty_work_period")==""||request.getParameter("BlackBelt")==""||request.getParameter("birthDate")==""||request.getParameter("email")==""||request.getParameter("expected_salary")==""||request.getParameter("faculty")==""||request.getParameter("name")==""||request.getParameter("grade")==""||request.getParameter("mobile")==""||request.getParameter("region")==""||request.getParameter("role")==""||request.getParameter("university")==""||request.getParameter("yearOfGraduate")==""||request.getParameter("num_experience")==""||resource.getResourceSkillLevels()==null){
+    		return "hresource/error";
+    	}
+    	
+    	//set resource variabls
+    	resource.setAddress(request.getParameter("Address"));
+    	resource.setFullName(request.getParameter("name"));
+    	resource.setDateOfBirth(request.getParameter("birthDate"));
+    	
+    	resource.setEmailAddress(request.getParameter("email"));
+    	resource.setRegion(request.getParameter("region"));
+    	resource.setUniversity(request.getParameter("university"));
+    	resource.setFaculty(request.getParameter("faculty"));
+    	resource.setGrade(request.getParameter("grade"));
+    	try{
+    		resource.setMobile(Integer.parseInt(request.getParameter("mobile")));
+    		resource.setYearOfGraduate(Integer.parseInt(request.getParameter("yearOfGraduate")));	
+    		resource.setYearsOfExperience(Integer.parseInt(request.getParameter("num_experience")));
+    		resource.setAvailabilatyForWork(Integer.parseInt(request.getParameter("Availabilty_work_period")));
+    		resource.setExpectedSalary(Double.parseDouble(request.getParameter("expected_salary")));
+    	}catch(Exception ea){
+    		return"hresource/num_error";
+    	}
+    	
+    	resource.setCourse(request.getParameter("courses"));
+    	resource.setCertificates(request.getParameter("certificates"));
+    	resource.setOtherTechno(request.getParameter("other_techno"));
+    	resource.setBlackBelt(request.getParameter("BlackBelt"));
+    	resource.setCurrentEmployer(request.getParameter("Current_Employer"));
+    	
+    	resource.setCurentJobTitle(request.getParameter("current_job_title"));
+    	resource.setRoole(request.getParameter("role"));
+    	
+    	
+    	
+    
     	resource.persist();
     	
     	

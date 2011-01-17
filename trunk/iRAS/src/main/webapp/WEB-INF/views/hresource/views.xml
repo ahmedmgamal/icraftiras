@@ -8,4 +8,11 @@
     <definition extends="public" name="hresource/sub">
         <put-attribute name="body" value="/WEB-INF/views/hresource/submit.jspx"/>
     </definition>
+    
+    <definition extends="public" name="hresource/error">
+        <put-attribute name="body" value="/WEB-INF/views/hresource/field_error.jspx"/>
+    </definition>
+     <definition extends="public" name="hresource/num_error">
+        <put-attribute name="body" value="/WEB-INF/views/hresource/number_error.jspx"/>
+    </definition>
 </tiles-definitions>

@@ -20,7 +20,7 @@ public class Resource {
 
     @NotNull
     private String fullName;
-
+    @NotNull
     private Integer yearsOfExperience;
     
     @NotNull
@@ -42,7 +42,7 @@ public class Resource {
     private String region;
     
     @NotNull
-    private String mobile;
+    private Integer mobile;
    
     @NotNull
     private String dateOfBirth;

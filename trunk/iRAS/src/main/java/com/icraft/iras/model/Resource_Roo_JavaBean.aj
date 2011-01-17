@@ -74,11 +74,11 @@ privileged aspect Resource_Roo_JavaBean {
         this.region = region;
     }
     
-    public String Resource.getMobile() {
+    public Integer Resource.getMobile() {
         return this.mobile;
     }
     
-    public void Resource.setMobile(String mobile) {
+    public void Resource.setMobile(Integer mobile) {
         this.mobile = mobile;
     }
     

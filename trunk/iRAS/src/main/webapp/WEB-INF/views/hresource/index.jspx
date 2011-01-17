@@ -4,10 +4,12 @@
   <spring:message code="label_hresource_index" var="title"/>
   <util:panel id="title" title="${title}">
     <spring:message code="application_name" var="app_name"/>
-    <h3>
+    <h1>
       <spring:message arguments="${app_name}" code="welcome_titlepane"/>
       
+    </h1>
+    <h3>
+    <spring:message code="welcome_regest" arguments="${member_name }"></spring:message>
     </h3>
-    <h3>thanks for your registration ${member_name }</h3>
   </util:panel>
 </div>
