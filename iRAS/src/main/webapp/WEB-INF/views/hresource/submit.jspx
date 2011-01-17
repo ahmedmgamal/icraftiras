@@ -2,14 +2,14 @@
 <div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
   <jsp:output omit-xml-declaration="yes"/>
   <util:panel title="please fill in this application to applay for this job" id="cv_app">
-  Job Title<br/><br/>
-   ${job_name}<br/><br/>
-   Describtion<br/><br/>
-  ${job_describtion}<br/><br/>
-  Technical Skills<br/><br/>
+  <h3>Job Title</h3>
+   ${job_name}
+   <h3>Describtion</h3> 
+  ${job_describtion}
+  <h3>Technical Skills</h3>
   
   <c:forEach items="${job_skills}" var="item">
-  ${item.name }<br/><br/>
+  * ${item.name }<br/><br/>
   </c:forEach>
   
   <form action="hresource/save" method="Post">
@@ -22,33 +22,33 @@
  
   </tr> 
   <tr>
-  <td>Full name</td>
+  <td>Full name *</td>
       </tr>
       <tr>           
   <td><input type="text" name="name"></input></td>
   </tr>
   <tr>
-  <td >Addrrss </td>
+  <td >Addrrss *</td>
   </tr>
   <tr>
   <td ><input type="text" name="Address"></input></td>
   </tr>
    <tr>
-  <td >region</td>
+  <td >region *</td>
   </tr>
   <tr>
   <td ><input type="text" name="region"></input></td>
   </tr>
   <tr>
   
-  <td >Mobile</td>
+  <td >Mobile *</td>
   </tr>
   <tr>
   <td ><input type="text" name="mobile"></input></td>
   
   </tr>
   <tr>
- <td > Email</td>
+ <td > Email *</td>
  </tr>
  <tr>
 
@@ -57,7 +57,7 @@
  
   
   <tr>
-  <td >BirthDate</td>
+  <td >BirthDate *</td>
   </tr>
   <tr>
   <td><input type="text" name="birthDate"></input>  dd-mm-yyyy</td>
@@ -71,7 +71,7 @@
   
   
     <tr>
- <td >University</td> 
+ <td >University *</td> 
  </tr>
  <tr>
  
@@ -81,7 +81,7 @@
   </tr>
   
      <tr>
-   <td >Faculty/Department</td>
+   <td >Faculty/Department *</td>
    </tr>
    <tr>
   
@@ -93,7 +93,7 @@
   
   
     <tr>
- <td >Graduation Year</td>
+ <td >Graduation Year *</td>
  </tr>
  <tr>
  
@@ -110,7 +110,7 @@
   
   
     <tr>
- <td >Graduation Grade</td>
+ <td >Graduation Grade *</td>
  </tr>
  <tr>
   
@@ -156,7 +156,7 @@
   
   <c:forEach items="${skilsList}" var="item">
     <tr>
-  <td>${item.name }</td>
+  <td>${item.name } *</td>
   </tr>
   <tr>
   <td>
@@ -170,7 +170,7 @@
 
   
     <tr>
- <td>Which belt do you have from BlackBeltFactory.com?</td>
+ <td>Which belt do you have from BlackBeltFactory.com? *</td>
  </tr>
  <tr>
   
@@ -231,11 +231,12 @@
   </tr>
  
     <tr>
- <td>Numbers of years of experience in IT Field</td> 
+ <td>Numbers of years of experience in IT Field *</td> 
  </tr>
  <tr>
   
-  <td><input type="radio" name="num_experience" value="1" />1
+  <td><input type="radio" name="num_experience" value="0" />0
+  <input type="radio" name="num_experience" value="1" />1
   <input type="radio" name="num_experience" value="2" />2
    <input type="radio" name="num_experience" value="3" />3
     <input type="radio" name="num_experience" value="4" />4
@@ -251,7 +252,7 @@
   
   
     <tr>
- <td>Availability for work when are you able to start work with ICraft ?</td> 
+ <td>Availability for work when are you able to start work with ICraft ? *</td> 
  </tr>
  <tr>
   
@@ -261,11 +262,11 @@
   </tr>
 
     <tr>
- <td>Expected Net Salary</td>
+ <td>Expected Net Salary *</td>
  </tr>
  <tr>
   
-  <td> <input type="text" name="expected_salary"></input></td>
+  <td> <input type="text" name="expected_salary" ></input></td>
   
   
   </tr>
@@ -274,7 +275,7 @@
   
   
     <tr>
-<td>What is the most important for you in new work</td>
+<td>What is the most important for you in new work *</td>
 </tr>
 <tr>
   

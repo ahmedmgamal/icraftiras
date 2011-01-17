@@ -4,7 +4,7 @@
     <form:create id="fc_com_icraft_iras_model_Resource" modelAttribute="resource" path="/resources" render="${empty dependencies}" z="UeGwP6Z+V4aP2giDl5znWdgwvSY=">
         <field:input field="fullName" id="c_com_icraft_iras_model_Resource_fullName" required="true" z="OssjrNwBk3Dfko/9PSJ5z6BUuX4="/>
         
-        <field:input field="yearsOfExperience" id="c_com_icraft_iras_model_Resource_yearsOfExperience" validationMessageCode="field_invalid_integer" z="uh8OC6B4cPXvLRQCS7gJfAzj/zQ="/>
+        <field:input field="yearsOfExperience" id="c_com_icraft_iras_model_Resource_yearsOfExperience" required="true" validationMessageCode="field_invalid_integer" z="vYuKkqOqqrNfvfT5XS8rb8/XA6E="/>
     <field:input field="expectedSalary" id="c_com_icraft_iras_model_Resource_expectedSalary" required="true" z="yXPT6ykx+LccmX/d/dx1JnZfJQk="/>
     
     <field:input field="emailAddress" id="c_com_icraft_iras_model_Resource_emailAddress" required="true" validationMessageCode="field_invalid_email" z="LxuEqVWcD7YXNNmfQX2vl1J47s8="/>
@@ -14,7 +14,7 @@
     
     <field:input field="address" id="c_com_icraft_iras_model_Resource_address" required="true" z="qlhT2/4EJPZynhiy3cUTVNiMSHs="/>
     <field:input field="region" id="c_com_icraft_iras_model_Resource_region" required="true" z="n05baamB2AJa179a4mklMibqhI4="/>
-    <field:input field="mobile" id="c_com_icraft_iras_model_Resource_mobile" required="true" z="b45PyH7giRghYYaZrPm6b2XkhuA="/>
+    <field:input field="mobile" id="c_com_icraft_iras_model_Resource_mobile" required="true" validationMessageCode="field_invalid_integer" z="xVkGHbXi1tYaiTobzluX0jiBsgY="/>
     <field:input field="dateOfBirth" id="c_com_icraft_iras_model_Resource_dateOfBirth" required="true" z="Xf4Hk9C7LHceW88ThB2TZAGc3s0="/>
     <field:input field="faculty" id="c_com_icraft_iras_model_Resource_faculty" required="true" z="kUjQu5DAepaJE6Yxfy3s4SXePbA="/>
     <field:input field="yearOfGraduate" id="c_com_icraft_iras_model_Resource_yearOfGraduate" required="true" validationMessageCode="field_invalid_integer" z="zGzVXSSfDwW/12be9m7lRh/0wW4="/>

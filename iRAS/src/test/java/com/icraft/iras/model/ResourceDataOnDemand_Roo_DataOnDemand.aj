@@ -32,7 +32,7 @@ privileged aspect ResourceDataOnDemand_Roo_DataOnDemand {
         obj.setFaculty("faculty_" + index);
         obj.setFullName("fullName_" + index);
         obj.setGrade("grade_" + index);
-        obj.setMobile("mobile_" + index);
+        obj.setMobile(new Integer(index));
         obj.setOtherTechno("otherTechno_" + index);
         obj.setRegion("region_" + index);
         obj.setRoole("roole_" + index);
