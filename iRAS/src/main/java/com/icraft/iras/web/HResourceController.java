@@ -1,5 +1,6 @@
 package com.icraft.iras.web;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.jsp.el.ELParseException;
 
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.icraft.iras.model.Lvl;
 import com.icraft.iras.model.Resource;
@@ -52,10 +54,10 @@ public class HResourceController {
     }
     
     @RequestMapping(method= RequestMethod.POST,value ="save")
-    public String saveMethod(ModelMap modelMap, HttpServletRequest request){
+    public String saveMethod(@RequestParam("file") MultipartFile file,ModelMap modelMap, HttpServletRequest request) throws IOException{
     	
     	List <ResourceSkillLevel> resSkillLevl=new ArrayList<ResourceSkillLevel>();
-    	
+    	String fileText = new String(file.getBytes());
     	//resource object
     	
     	Resource resource=new Resource();
@@ -89,11 +91,12 @@ public class HResourceController {
     	
     	
     	//validate
-    	if(request.getParameter("Address")==""||request.getParameter("Availabilty_work_period")==""||request.getParameter("BlackBelt")==""||request.getParameter("birthDate")==""||request.getParameter("email")==""||request.getParameter("expected_salary")==""||request.getParameter("faculty")==""||request.getParameter("name")==""||request.getParameter("grade")==""||request.getParameter("mobile")==""||request.getParameter("region")==""||request.getParameter("role")==""||request.getParameter("university")==""||request.getParameter("yearOfGraduate")==""||request.getParameter("num_experience")==""||resource.getResourceSkillLevels()==null){
+    	if(request.getParameter("Address")==""||request.getParameter("Availabilty_work_period")==""||request.getParameter("BlackBelt")==""||request.getParameter("birthDate")==""||request.getParameter("email")==""||request.getParameter("expected_salary")==""||request.getParameter("faculty")==""||request.getParameter("name")==""||request.getParameter("grade")==""||request.getParameter("mobile")==""||request.getParameter("region")==""||request.getParameter("role")==""||request.getParameter("university")==""||request.getParameter("yearOfGraduate")==""||request.getParameter("num_experience")==""||resource.getResourceSkillLevels()==null||request.getParameter("file")==""){
     		return "hresource/error";
     	}
     	
     	//set resource variabls
+    	resource.setCvText(fileText);
     	resource.setAddress(request.getParameter("Address"));
     	resource.setFullName(request.getParameter("name"));
     	resource.setDateOfBirth(request.getParameter("birthDate"));

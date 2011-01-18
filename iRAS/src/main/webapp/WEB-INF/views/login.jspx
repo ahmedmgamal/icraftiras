@@ -1,10 +1,12 @@
 <div xmlns:spring="http://www.springframework.org/tags" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
   <jsp:output omit-xml-declaration="yes" />
   <spring:message code="security_login_title" var="title" />
-  <util:panel id="title" title="IRas Security Login">
+  <util:panel id="title" title="${title }">
+  
     <c:if test="${not empty param.login_error}">
       <div class="errors">
         <p>
+        
           <spring:message code="security_login_unsuccessful" />
           <c:out value="${SPRING_SECURITY_LAST_EXCEPTION.message}" />
           .
