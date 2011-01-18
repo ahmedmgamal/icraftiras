@@ -31,7 +31,7 @@ public class Resource {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<ResourceSkillLevel> resourceSkillLevels;
-
+    @NotNull
     @javax.persistence.Lob
     public String cvText;
     

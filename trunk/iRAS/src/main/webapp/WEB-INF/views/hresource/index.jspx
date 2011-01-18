@@ -11,5 +11,6 @@
     <h3>
     <spring:message code="welcome_regest" arguments="${member_name }"></spring:message>
     </h3>
+    
   </util:panel>
 </div>

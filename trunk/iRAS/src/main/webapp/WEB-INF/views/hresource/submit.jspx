@@ -13,7 +13,7 @@
   * ${item.name }<br/><br/>
   </c:forEach>
   
-  <form action="hresource/save" method="Post">
+  <form action="hresource/save" method="Post" enctype="multipart/form-data">
   <table>
   <tr>
   
@@ -55,8 +55,14 @@
 
   <td ><input type="text" name="email"></input> In case of selection for further steps , you will be contacted by this email . email has to be the same like the the one in your CV<br/></td> 
   </tr>
- 
-  
+  <tr>
+  <td>Upload your cv * </td>
+  </tr>
+   <tr>
+   <td><input type="file" name="file"/>
+    </td>
+   
+  </tr>
   <tr>
   <td >BirthDate *</td>
   </tr>
