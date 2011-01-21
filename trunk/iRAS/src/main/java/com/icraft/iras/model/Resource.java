@@ -1,10 +1,14 @@
 package com.icraft.iras.model;
 
 import javax.persistence.Entity;
+
+import org.hibernate.validator.constraints.Email;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
 import org.springframework.roo.addon.entity.RooEntity;
 import javax.validation.constraints.NotNull;
+
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.OneToMany;
@@ -27,11 +31,12 @@ public class Resource {
     private double expectedSalary;
     
     @NotNull
+    @Email
     private String emailAddress;
-
+    @NotNull
     @OneToMany(cascade = CascadeType.ALL)
     private List<ResourceSkillLevel> resourceSkillLevels;
-    @NotNull
+   @NotNull
     @javax.persistence.Lob
     public String cvText;
     
@@ -45,7 +50,7 @@ public class Resource {
     private Integer mobile;
    
     @NotNull
-    private String dateOfBirth;
+    private Date dateOfBirth;
     
     @NotNull
     private String faculty;

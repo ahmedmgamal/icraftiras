@@ -26,7 +26,7 @@ privileged aspect ResourceDataOnDemand_Roo_DataOnDemand {
         obj.setCurentJobTitle("curentJobTitle_" + index);
         obj.setCurrentEmployer("currentEmployer_" + index);
         obj.setCvText("cvText_" + index);
-        obj.setDateOfBirth("dateOfBirth_" + index);
+        obj.setDateOfBirth(new java.util.Date());
         obj.setEmailAddress("emailAddress_" + index);
         obj.setExpectedSalary(new Integer(index).doubleValue());
         obj.setFaculty("faculty_" + index);

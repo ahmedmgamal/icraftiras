@@ -3,6 +3,7 @@
   <jsp:output omit-xml-declaration="yes"/>
   <spring:message var="til" code="fill_app"></spring:message>
   <util:panel  id="til" title="${til }">
+
   <h3>Job Title</h3>
    ${job_name}
    <h3>Describtion</h3> 
@@ -13,7 +14,7 @@
   * ${item.name }<br/><br/>
   </c:forEach>
   
-  <form action="hresource/save" method="Post" enctype="multipart/form-data">
+  <form action="hresource/save" method="Post"   enctype="multipart/form-data">
   <table>
   <tr>
   
@@ -59,7 +60,7 @@
   <td>Upload your cv * </td>
   </tr>
    <tr>
-   <td><input type="file" name="file"/>
+   <td><input type="file" name="file" />
     </td>
    
   </tr>
@@ -67,7 +68,7 @@
   <td >BirthDate *</td>
   </tr>
   <tr>
-  <td><input type="text" name="birthDate"></input>  dd-mm-yyyy</td>
+  <td><input type="text" name="birthDate"></input>  dd/mm/yyyy</td>
  </tr>
   
    <tr>
