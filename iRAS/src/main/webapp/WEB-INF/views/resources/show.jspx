@@ -15,7 +15,7 @@
     <field:display field="address" id="s_com_icraft_iras_model_Resource_address" object="${resource}" z="CVRJe7BPT6Wrl+DmjisAXxS3gXg="/>
     <field:display field="region" id="s_com_icraft_iras_model_Resource_region" object="${resource}" z="EwZBtD8U+mf4AE7I170bXMCEU5k="/>
     <field:display field="mobile" id="s_com_icraft_iras_model_Resource_mobile" object="${resource}" z="W+9lWqOxBc0uUMkMfrd39OHDtbA="/>
-    <field:display field="dateOfBirth" id="s_com_icraft_iras_model_Resource_dateOfBirth" object="${resource}" z="opNNDFJoBQBJCn7iB3O9/rWPPXU="/>
+    <field:display date="true" dateTimePattern="${resource_dateofbirth_date_format}" field="dateOfBirth" id="s_com_icraft_iras_model_Resource_dateOfBirth" object="${resource}" z="4pYKm/K2ixYLXjX5OxvQvpYcwcc="/>
     <field:display field="faculty" id="s_com_icraft_iras_model_Resource_faculty" object="${resource}" z="+U4cFadKOSW26uW4ncN/dA03gYw="/>
     <field:display field="yearOfGraduate" id="s_com_icraft_iras_model_Resource_yearOfGraduate" object="${resource}" z="gq8bjR0hT9dacfV2+DBL6zIVf60="/>
     <field:display field="grade" id="s_com_icraft_iras_model_Resource_grade" object="${resource}" z="tzw4IrFeBjgtmslnMOlm1bm2pqg="/>

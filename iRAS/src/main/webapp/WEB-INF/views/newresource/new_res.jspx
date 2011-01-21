@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core"
+ xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" 
+ xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" 
+ xmlns:jsp="http://java.sun.com/JSP/Page" 
+ xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+  
+    <form:create modelAttribute="resource" path="/newresource" id="fc_com_icraft_iras_model_Resource" render="${empty dependencies}">
+      <field:display id="s_com_icraft_iras_model_Vacancy_JobTitle" object="${vacancy}" field="jobTitle"></field:display>
+       <field:display id="s_com_icraft_iras_model_Vacancy_Description" object="${vacancy}" field="description"></field:display>
+ 		<field:display id="s_com_icraft_iras_model_Vacancy_Qualifications" object="${vacancy }" field="qualifications"></field:display>
+    
+    <field:input id="res_name" field="fullName" label="Name"></field:input>
+    <field:input id="res_salary" field="expectedSalary" label="Expect Salary"></field:input>
+    <field:input id="res_email" field="emailAddress" label="Email Address"></field:input>
+    <field:input id="res_address" field="address" label="Address"></field:input>
+    <field:input id="res_region" field="region" label="Region"></field:input>
+    <field:input id="res_mobile" field="mobile" label="Mobile"></field:input>
+    <field:datetime id="res_date" field="dateOfBirth" dateTimePattern="DD/MM/yyyy" label="BirthDate"></field:datetime>
+    <field:input id="res_faculty" field="faculty" label="Faculty"></field:input>
+    <field:input id="res_year_Grade" field="yearOfGraduate" label="Year of Graduate"></field:input>
+    <field:input id="res_grade" field="grade" label="Grade"></field:input>
+    <field:input id="res_course" field="course" label="Course"></field:input>
+    <field:input id="res_certificate" field="certificates" label="Certificates"></field:input>
+    <field:input id="res_Techno" field="otherTechno" label="Other Technologies"></field:input>
+    <field:input id="res_current_emplyee" field="currentEmployer" label="Current Employer if exist"></field:input>
+    <field:input id="res_cureent_jobTitle" field="curentJobTitle" label="Current jobTitle if exist"></field:input>
+    <field:input id="res_avail_work" field=" availabilatyForWork" label="After how many days can you join Us"></field:input><br/>
+    <field:input id="res_role" field="roole" label="Role"></field:input>
+    <field:input id="res_unives" field="university" label="University"></field:input>
+    Which belt do you have from BlackBeltFactory.com?<br/>
+    <input type="radio" value="don`t know" name="blackBelt">iI don`t know it</input>
+    <input type="radio" value="not yet" name="blackBelt">Not yet</input>
+    <input type="radio" value="yellow" name="blackBelt">Yellow</input>
+    <input type="radio" value="orange" name="blackBelt">Orange</input>
+    <input type="radio" value="green" name="blackBelt">Green</input>
+    <input type="radio" value="blue" name="blackBelt">Blue</input>
+    <input type="radio" value="brown" name="blackBelt">Brown</input>
+    <input type="radio" value="black" name="blackBelt">Black</input><br/><br/>
+    
+    Numbers of years of experience in IT Field<br/>
+    <input type="radio" name="num_experience" value="0" />0
+  <input type="radio" name="num_experience" value="1" />1
+  <input type="radio" name="num_experience" value="2" />2
+   <input type="radio" name="num_experience" value="3" />3
+    <input type="radio" name="num_experience" value="4" />4
+     <input type="radio" name="num_experience" value="5" />5
+      <input type="radio" name="num_experience" value="6" />6
+       <input type="radio" name="num_experience" value="7" />7
+        <input type="radio" name="num_experience" value="8" />8
+         <input type="radio" name="num_experience" value="9" />9
+          <input type="radio" name="num_experience" value="10" />10 years<br/><br/>
+         Teachnical Skills:<br/><br/>
+          <c:forEach items="${skill}" var="item">
+          ${item.name}<br/>
+          <c:forEach items="${lvl}" var="lvlItem">
+          <input type="radio" value="${lvlItem.id }"  name="${item.name }">${lvlItem.name}</input>
+          
+          </c:forEach>
+          <br/><br/>
+          
+          </c:forEach>
+
+    
+    </form:create>
+    
+    <form:dependency dependencies="${dependencies}" id="d_com_icraft_iras_model_Resource" render="${not empty dependencies}" />
+    </div>

@@ -6,6 +6,7 @@ package com.icraft.iras.model;
 import com.icraft.iras.model.ResourceSkillLevel;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Date;
 import java.util.List;
 
 privileged aspect Resource_Roo_JavaBean {
@@ -82,11 +83,11 @@ privileged aspect Resource_Roo_JavaBean {
         this.mobile = mobile;
     }
     
-    public String Resource.getDateOfBirth() {
+    public Date Resource.getDateOfBirth() {
         return this.dateOfBirth;
     }
     
-    public void Resource.setDateOfBirth(String dateOfBirth) {
+    public void Resource.setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
     

@@ -1,22 +1,32 @@
 package com.icraft.iras.web;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
+import org.apache.tika.exception.TikaException;
+import org.apache.tika.metadata.Metadata;
+import org.apache.tika.parser.AutoDetectParser;
+import org.apache.tika.sax.BodyContentHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.ModelMap;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.jsp.el.ELParseException;
-
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.multipart.MultipartFile;
+import org.xml.sax.ContentHandler;
+import org.xml.sax.SAXException;
 
 import com.icraft.iras.model.Lvl;
 import com.icraft.iras.model.Resource;
@@ -32,7 +42,6 @@ public class HResourceController {
     @RequestMapping(method = RequestMethod.POST, value = "{id}")
     public void get(ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) {
     }
-
 
     @RequestMapping(value="/{Id}")
     public String index(@PathVariable("Id") long id,ModelMap modelMap, HttpServletRequest request) {
@@ -57,10 +66,44 @@ public class HResourceController {
     public String saveMethod(@RequestParam("file") MultipartFile file,ModelMap modelMap, HttpServletRequest request) throws IOException{
     	
     	List <ResourceSkillLevel> resSkillLevl=new ArrayList<ResourceSkillLevel>();
-    	String fileText = new String(file.getBytes());
+    			String cvText=null;
+
+		
+    			
+    			
+    			
+    			//handel cv
+    	    	
+    		   	 InputStream cv=file.getInputStream(); 
+    				AutoDetectParser parser = new AutoDetectParser();
+    				Metadata metadata = new Metadata();
+    				ContentHandler handler = new BodyContentHandler();
+    			
+    					try {
+    						parser.parse(cv, handler, metadata);
+    						cvText=handler.toString();
+    						if(cvText.equals("\n")||cvText.equals("")){
+    							return"hresource/errorCv";
+    						}
+    					}
+    					catch (SAXException e) {
+    						
+    					return"hresource/errorCv";
+    					} catch (TikaException e) {
+    						
+    						return"hresource/errorCv";
+    					}
+    					
+    						catch(FileNotFoundException ex){
+    							return"hresource/errorCv";
+    						}
+    					
+    				
+    				
     	//resource object
     	
     	Resource resource=new Resource();
+    
     	
 	//set resource skill level list
     	
@@ -84,22 +127,32 @@ public class HResourceController {
     		resourceSkilLevel.setResource(resource);
     		resSkillLevl.add(resourceSkilLevel);
     		}
-    	
     	}
+    	
+    	
     	resource.setResourceSkillLevels(resSkillLevl);
    
     	
-    	
     	//validate
-    	if(request.getParameter("Address")==""||request.getParameter("Availabilty_work_period")==""||request.getParameter("BlackBelt")==""||request.getParameter("birthDate")==""||request.getParameter("email")==""||request.getParameter("expected_salary")==""||request.getParameter("faculty")==""||request.getParameter("name")==""||request.getParameter("grade")==""||request.getParameter("mobile")==""||request.getParameter("region")==""||request.getParameter("role")==""||request.getParameter("university")==""||request.getParameter("yearOfGraduate")==""||request.getParameter("num_experience")==""||resource.getResourceSkillLevels()==null||request.getParameter("file")==""){
+    	if(request.getParameter("Address")==""||request.getParameter("Availabilty_work_period")==""||request.getParameter("BlackBelt")==null||request.getParameter("birthDate")==""||request.getParameter("email")==""||request.getParameter("expected_salary")==""||request.getParameter("faculty")==""||request.getParameter("name")==""||request.getParameter("grade")==""||request.getParameter("mobile")==""||request.getParameter("region")==""||request.getParameter("role")==""||request.getParameter("university")==""||request.getParameter("yearOfGraduate")==""||request.getParameter("num_experience")==null||resource.getResourceSkillLevels()==null){
     		return "hresource/error";
     	}
     	
+    	
+    
+    	
     	//set resource variabls
-    	resource.setCvText(fileText);
+    	resource.setCvText(cvText);
     	resource.setAddress(request.getParameter("Address"));
     	resource.setFullName(request.getParameter("name"));
-    	resource.setDateOfBirth(request.getParameter("birthDate"));
+    	String date=request.getParameter("birthDate");
+    	SimpleDateFormat df=new SimpleDateFormat("dd/mm/yyyy", Locale.US);
+    	try{
+    	Date myBirthdate=df.parse(date);
+    	resource.setDateOfBirth(myBirthdate);
+    	}catch(Exception ex){
+    		return"hresource/dateError";
+    	}
     	
     	resource.setEmailAddress(request.getParameter("email"));
     	resource.setRegion(request.getParameter("region"));
@@ -133,8 +186,7 @@ public class HResourceController {
     	
     	modelMap.addAttribute("member_name",resource.getFullName() );
     	
-    	
-    	return"hresource/index";
+    	    	return"hresource/index";
     }
-    
-}
+       
+		}

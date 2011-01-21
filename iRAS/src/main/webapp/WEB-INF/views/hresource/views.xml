@@ -15,4 +15,12 @@
      <definition extends="public" name="hresource/num_error">
         <put-attribute name="body" value="/WEB-INF/views/hresource/number_error.jspx"/>
     </definition>
+    
+       <definition extends="public" name="hresource/dateError">
+        <put-attribute name="body" value="/WEB-INF/views/hresource/error_date.jspx"/>
+    </definition>
+    
+     <definition extends="public" name="hresource/errorCv">
+        <put-attribute name="body" value="/WEB-INF/views/hresource/cv_error.jspx"/>
+    </definition>
 </tiles-definitions>
