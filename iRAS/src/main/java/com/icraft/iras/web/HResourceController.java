@@ -1,8 +1,14 @@
 package com.icraft.iras.web;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,6 +17,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.tika.exception.TikaException;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.parser.AutoDetectParser;
@@ -21,6 +28,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.ModelMap;
 
+import javax.servlet.Servlet;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -67,11 +77,11 @@ public class HResourceController {
     	
     	List <ResourceSkillLevel> resSkillLevl=new ArrayList<ResourceSkillLevel>();
     			String cvText=null;
+    			
 
-		
     			
     			
-    			
+    	    	
     			//handel cv
     	    	
     		   	 InputStream cv=file.getInputStream(); 
@@ -97,12 +107,29 @@ public class HResourceController {
     						catch(FileNotFoundException ex){
     							return"hresource/errorCv";
     						}
-    					
-    				
-    				
+    						String fileName=file.getOriginalFilename();
+    						String directory="C:\\Documents and Settings\\"+fileName;
+    						FileOutputStream fs=new FileOutputStream(directory);
+    						fs.write(file.getBytes());
+    						fs.flush();
+    						fs.close();
+    						
+    				        
+    				       
+    				    
+    				       
+    				        
+    				       
+    				       
+    				        
+    				       
     	//resource object
     	
     	Resource resource=new Resource();
+    	
+    	
+    	
+    
     
     	
 	//set resource skill level list
@@ -134,7 +161,7 @@ public class HResourceController {
    
     	
     	//validate
-    	if(request.getParameter("Address")==""||request.getParameter("Availabilty_work_period")==""||request.getParameter("BlackBelt")==null||request.getParameter("birthDate")==""||request.getParameter("email")==""||request.getParameter("expected_salary")==""||request.getParameter("faculty")==""||request.getParameter("name")==""||request.getParameter("grade")==""||request.getParameter("mobile")==""||request.getParameter("region")==""||request.getParameter("role")==""||request.getParameter("university")==""||request.getParameter("yearOfGraduate")==""||request.getParameter("num_experience")==null||resource.getResourceSkillLevels()==null){
+    	if(request.getParameter("Address").equals("")||request.getParameter("Availabilty_work_period").equals("")||request.getParameter("BlackBelt")==null||request.getParameter("birthDate").equals("")||request.getParameter("email").equals("")||request.getParameter("expected_salary").equals("")||request.getParameter("faculty").equals("")||request.getParameter("name").equals("")||request.getParameter("grade").equals("")||request.getParameter("mobile").equals("")||request.getParameter("region").equals("")||request.getParameter("role").equals("")||request.getParameter("university").equals("")||request.getParameter("yearOfGraduate").equals("")||request.getParameter("num_experience")==null||resource.getResourceSkillLevels()==null){
     		return "hresource/error";
     	}
     	
@@ -182,6 +209,9 @@ public class HResourceController {
     	
     
     	resource.persist();
+    
+    	
+    
     	
     	
     	modelMap.addAttribute("member_name",resource.getFullName() );
