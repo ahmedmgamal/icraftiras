@@ -17,6 +17,7 @@
         <menu:item id="i_controller__titlejobindex_id" messageCode="global_generic" url="/titlejob/index" z="KbI8bDKgPM46ktkq/7eLA2Vvd8A="/>
         <menu:item id="i_controller__hresourceindex_id" messageCode="global_generic" url="/hresource/index" z="aK7PIe00MyCvxeaC9ROA/sVGO3U="/>
         <menu:item id="i_controller__newresourceindex_id" messageCode="global_generic" url="/newresource/index" z="cmD6bx3NCUPIxm4JJUoiETwNgoE="/>
+        <menu:item id="i_controller__technosearchindex_id" messageCode="global_generic" url="/technosearch/index" z="gqMcgLt18REkfnKgo0sgceI+vW4="/>
         </menu:category>
     <menu:category id="c_jobtitle" z="oxiWDJkVpIBbJUJgpiCoIUk+OEU=">
         <menu:item id="i_jobtitle_new" messageCode="global_menu_new" url="/jobtitles?form" z="ljbt3VrhcIIC0FCN3OgMiJvsuYg="/>

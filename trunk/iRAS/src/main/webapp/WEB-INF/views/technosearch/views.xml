@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="technosearch/index">
+        <put-attribute name="body" value="/WEB-INF/views/technosearch/index.jspx"/>
+    </definition>
+    
+     <definition extends="default" name="technosearch/techSearch">
+        <put-attribute name="body" value="/WEB-INF/views/technosearch/search.jspx"/>
+    </definition>
+    
+    <definition extends="default" name="technosearch/resultSearch">
+        <put-attribute name="body" value="/WEB-INF/views/technosearch/searchResult.jspx"/>
+    </definition>
+</tiles-definitions>

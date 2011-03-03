@@ -332,3 +332,5 @@ controller class --class ~.web.newResourceController
 // Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2011-02-25 02:12:37
 // Spring Roo 1.1.0.RELEASE [rev 793f2b0] log closed at 2011-02-25 02:32:48
 // Spring Roo 1.1.0.RELEASE [rev 793f2b0] log opened at 2011-03-03 18:49:44
+// [failed] controller class --class ~.web.TechnoSearchController
+controller class --class ~.web.TechnoSearchController
